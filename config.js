@@ -87,17 +87,17 @@ var respecConfig =
 
   // nl_organisationPublishURL points to organisation specifica publication page, used in header
   // defaults to  https://docs.geostandaarden.nl/"
-  nl_organisationPublishURL: "https://publicatie.centrumvoorstandaarden.nl/",
+  nl_organisationPublishURL: "https://adgerrits.github.io/",
 
   // nl_logo refers to company logo
   // defaults to https://tools.geostandaarden.nl/respec/style/logos/Geonovum.svg
   nl_logo: {
-    src: "https://publicatie.centrumvoorstandaarden.nl/respec/style/logos/figure-logius.svg",
-    alt: "Logius",
+    src: "https://www.vngrealisatie.nl/themes/custom/tagordo/dist/images/Logo.svg",
+    alt: "VNG Realisatie",
     id: "Logius",
     height: 77,
     width: 44,
-    url: "https://www.logius.nl/standaarden",
+    url: "https://www.vngrealisatie.nl",
   },
   localBiblio: {
     "CloudEvents2": {

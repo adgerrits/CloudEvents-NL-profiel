@@ -15,3 +15,4 @@ The following example shows a CloudEvent serialized as JSON:
     "datacontenttype" : "text/xml",
     "data" : "<much wow=\"xml\"/>"
 }
+```
