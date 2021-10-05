@@ -2,7 +2,7 @@
 
 Dit is het **Nederlandse profiel** voor de internationale **CloudEvents** berichtstandaard.
 
-Bekijk hier de **laatste vastgestelde versie** van de standaard:
+Bekijk hier de **laatste vastgestelde versie** van de standaard: todo
 
 Bekijk hier **de laatste werkversie** van de standaard:
 

@@ -13,88 +13,48 @@
 
 var respecConfig =
 {
-  specStatus: "DEF",
+  specStatus: "ED",
   specType: "ST",
   // format: "markdown",
   pubDomain: "api",
   shortName: "CloudEvents",
 
-  publishDate: "2020-07-09",
+  publishDate: "2021-10-05",
   //previousPublishDate: "2019-02-13",
 
-  publishVersion: "v1.0",
+  publishVersion: "v0.1",
   //previousPublishDate: "0.9",
 
   //previousMaturity: "GN-CV",
   editors:
     [
       {
-        name: "Frank Terpstra",
-        company: "Geonovum",
-        companyURL: "http://www.geonovum.nl/",
+        name: "Ad Gerrits",
+        company: "VNG Realisatie",
+        companyURL: "http://www.VNGRealisatie.nl/",
       },
       {
-        name: "Jan van Gelder",
-        company: "Geonovum",
-        companyURL: "http://www.geonovum.nl/",
+        name: "Jeanot Bijpost",
+        company: "VNG Realisatie",
+        companyURL: "http://www.VNGRealisatie.nl/",
       }
     ],
   authors:
     [
       {
-        name: "Jaron Azaria",
-        company: "Logius",
-        companyURL: "http://www.logius.nl/",
-      },
-      {
-        name: "Martin Borgman",
-        company: "Kadaster",
-        companyURL: "http://www.kadaster.nl/",
-      },
-      {
-        name: "Marc Fleischeuers",
-        company: "Kennisnet",
-        companyURL: "http://www.kennisnet.nl/",
-      },
-      {
-        name: "Peter Haasnoot",
-        company: "Logius",
-        companyURL: "http://www.logius.nl/",
-      },
-      {
-        name: "Leon van der Ree",
-        company: "Logius",
-        companyURL: "http://www.logius.nl/",
-      },
-      {
-        name: "Bob te Riele",
-        company: "RvIG",
-        companyURL: "http://www.rvig.nl/",
-      },
-      {
-        name: "Remco Schaar",
-        company: "Logius",
-        companyURL: "http://www.logius.nl/",
-      },
-      {
-        name: "Frank Terpstra",
-        company: "Geonovum",
-        companyURL: "http://geonovum.nl/",
-      },
-      {
-        name: "Jan Jaap Zoutendijk",
-        company: "Rijkswaterstaat",
-        companyURL: "http://www.rws.nl/",
+        name: "Gershon Jansen",
+        company: "VNG Realisatie",
+        companyURL: "http://www.vngrealisatie.nl/",
       },
     ],
-  github: "https://github.com/Logius-standaarden/CloudEvents-NL-profiel/",
-  issueBase: "https://github.com/Logius-standaarden/CloudEvents-NL-profiel/issues",
+  github: "https://github.com/adgerrits/CloudEvents-NL-profiel/",
+  issueBase: "https://github.com/adgerrits/CloudEvents-NL-profiel/issues",
   licence: "cc-by-nd",
 
   nl_github: {
-    issueBase: "https://github.com/Logius-standaarden/CloudEvents-NL-profiel/issues",
-    revision: "https://github.com/Logius-standaarden/CloudEvents-NL-profiel/commits",
-    pullsBase: "https://github.com/Logius-standaarden/CloudEvents-NL-profiel/pulls",
+    issueBase: "https://github.com/adgerrits/CloudEvents-NL-profiel/issues",
+    revision: "https://github.com/adgerrits/CloudEvents-NL-profiel/commits",
+    pullsBase: "https://github.com/adgerrits/CloudEvents-NL-profiel/pulls",
   },
 
   // Controls if linked "§" section markers are added to a document
@@ -106,7 +66,8 @@ var respecConfig =
 
   // nl_organisationName is used for some company specific values in the header (and Sotd)
   // currently supported: Logius and Geonovum (default)  
-  nl_organisationName: "Logius",
+  // ### was Logius
+  nl_organisationName: "VNG Realisatie",
 
   // prefix for the names of company specific css, svg and ico prefixes
   // defaults to "GN-"  
@@ -148,84 +109,12 @@ var respecConfig =
       publisher: "The Internet Engineering Task Force",
     },
     "Expert": {
-      href: "https://www.forumstandaardisatie.nl/sites/bfs/files/Expertadvies%20CloudEvents%202.0.pdf",
+      href: "",
       title:
         "Expertadvies CloudEvents 2.0",
-      authors: ["P. Dam"],
-      date: "24 februari 2017",
+      authors: ['todo'],
+      date: "@@@",
       publisher: "Forum STandaardisatie",
-    },
-    "JWT": {
-      href: "https://tools.ietf.org/html/rfc7519",
-      title:
-        "JSON Web Token (JWT)",
-      authors: ["M. Jones, J. Bradley, N. Sakimura"],
-      date: "may 2015",
-      publisher: "IETF",
-    },
-    "JWS": {
-      href: "https://tools.ietf.org/html/rfc7515",
-      title:
-        "JSON Web Signature (JWS)",
-      authors: ["M. Jones, J. Bradley, N. Sakimura"],
-      date: "may 2015",
-      publisher: "IETF",
-    },
-    "JWE": {
-      href: "https://tools.ietf.org/html/rfc7516",
-      title:
-        "JSON Web Encryption (JWE)",
-      authors: ["M. Jones, J. Hildebrand"],
-      date: "may 2015",
-      publisher: "IETF",
-    },
-    "JWK": {
-      href: "https://tools.ietf.org/html/rfc7517",
-      title:
-        "JSON Web Key (JWK))",
-      authors: ["M. Jones"],
-      date: "may 2015",
-      publisher: "IETF",
-    },
-    "JWA": {
-      href: "https://tools.ietf.org/html/rfc7518",
-      title:
-        "JSON Web Algorithms (JWA)",
-      authors: ["M. Jones"],
-      date: "may 2015",
-      publisher: "IETF",
-    },
-    "PKCE": {
-      href: "https://tools.ietf.org/html/rfc7636",
-      title:
-        "Proof Key for Code Exchange by CloudEvents Public Clients",
-      authors: ["N. Sakimura, J. Bradley, N. Agarwal"],
-      date: "september 2015",
-      publisher: "IETF",
-    },
-    "Introspection": {
-      href: "https://tools.ietf.org/html/rfc7662",
-      title:
-        "CloudEvents 2.0 Token Introspection",
-      authors: ["J. Richer"],
-      date: "October 2015",
-      publisher: "IETF",
-    },
-    "OpenID.Core": {
-      href: "https://openid.net/specs/openid-connect-core-1_0.html",
-      title:
-        "OpenID Connect Core 1.0",
-      authors: ["N. Sakimura, J. Bradley, M. Jones, B. de Medeiros, C. Mortimore"],
-      date: "November 8 2014",
-      publisher: "OpenID foundation",
-    },
-    "iGOV.OpenID": {
-      href: "https://openid.net/specs/openid-igov-openid-connect-1_0.html",
-      title:
-        "International Government Assurance Profile (iGov) for OpenID Connect 1.0 - draft 3",
-      authors: ["M. Varley, P. Grassi"],
-      date: "October 5 2018",
-      publisher: "OpenID foundation",
     },
     "iGOV.CloudEvents2": {
       href: "https://openid.net/specs/openid-igov-CloudEvents2-1_0.html",
