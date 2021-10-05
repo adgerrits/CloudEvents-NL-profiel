@@ -5,35 +5,39 @@ var respecConfig = {
   publishDate: "2017-12-13",
   editors: [
     {
-      name: "Frank Terpstra",
-      company: "Geonovum",
-      companyURL: "http://www.geonovum.nl/",
+      name: "Jeanot Bijpost",
+      company: "VNG Realisatie",
+      companyURL: "https://www.vngrealisatie.nl/",
     },
     {
-      name: "auteur 2",
-      company: "organisatie",
-      companyURL: "http://www.organisatie.nl/",
+      name: "Gershon Jansen",
+      company: "VNG Realisatie",
+      companyURL: "https://www.vngrealisatie.nl/",
     },
-  ],
-  shortName: "Nederlands profiel CloudEvents 2.0",
+    {
+      name: "Ad Gerrits",
+      company: "VNG Realisatie",
+      companyURL: "https://www.vngrealisatie.nl/",
+    },],
+  shortName: "Nederlands profiel CloudEvents 1.0",
   subtitle: "Werkversie",
-  github: "https://github.com/Logius-standaarden/KP-APIs-CloudEventsNL",
-  issueBase: "https://github.com/Logius-standaarden/KP-APIs-CloudEventsNL/issues/",
+  github: "https://github.com/adgerrits/CloudEvents-NL-profiel",
+  issueBase: "https://github.com/adgerrits/CloudEvents-NL-profiel/issues/",
   localBiblio: {
-    "CloudEvents2": {
-      href: "https://tools.ietf.org/html/rfc6749",
+    "CloudEvents1": {
+      href: "https://github.com/cloudevents/spec/blob/v1.0.1/spec.md",
       title:
-        "The CloudEvents 2.0 Authorization Framework",
-      authors: ["D. Hardt"],
-      date: "October 2012",
-      publisher: "The Internet Engineering Task Force",
+        "CloudEvents - Version 1.0.1",
+      authors: ["@@@"],
+      date: "May 2011",
+      publisher: "@@@",
     },
 	"Expert": {
-      href: "https://www.forumstandaardisatie.nl/sites/bfs/files/Expertadvies%20CloudEvents%202.0.pdf",
+      href: "https://www.forumstandaardisatie.nl/sites/bfs/files/@@@.pdf",
       title:
-        "Expertadvies CloudEvents 2.0",
-      authors: ["P. Dam"],
-      date: "24 februari 2017",
+        "Expertadvies CloudEvents 1.0",
+      authors: ["@@@"],
+      date: "@@@",
       publisher: "Forum STandaardisatie",
     },
     "UUID": {
