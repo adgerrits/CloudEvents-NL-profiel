@@ -1,10 +1,10 @@
 # Uitgangspunten 
 
-Dit hoofdstuk beschrijft de uitgangspunten voor het Nederlands profiel OAuth. 
+Dit hoofdstuk beschrijft de uitgangspunten voor het Nederlands profiel CloudEvents. 
 
-# Expert advies OAuth forum standaardisatie 
+# Expert advies CloudEvents forum standaardisatie 
 
-Het opstellen van deze standaard is voortgekomen uit het Expert advies OAuth [[Expert]]. Daarin wordt aangeraden eerst een nederlands profiel op stellen alvorens OAuth op de pas toe of leg uit lijst van het forum standaardisatie te plaatsen.
+Het opstellen van deze standaard is voortgekomen uit het Expert advies CloudEvents [[Expert]]. Daarin wordt aangeraden eerst een nederlands profiel op stellen alvorens CloudEvents op de pas toe of leg uit lijst van het forum standaardisatie te plaatsen.
 
 ## Werkingsgebied standaard
 
@@ -15,7 +15,7 @@ en instellingen uit de (semi-) publieke sector
 ## Toepassingsgebied standaard
 
 Als functioneel toepassingsgebied wordt voorgesteld:
-Het gebruik van OAuth 2.0 is verplicht voor applicaties waarbij gebruikers
+Het gebruik van CloudEvents 2.0 is verplicht voor applicaties waarbij gebruikers
 (resource owner) toestemming geven (impliciet of expliciet) aan een
 dienst (van een derde) om namens hem toegang te krijgen tot specifieke
 gegevens via een RESTful API.

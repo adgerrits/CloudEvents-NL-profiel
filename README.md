@@ -1,15 +1,12 @@
-# OAuth-NL-profiel
+# CloudEvents-NL-profiel
 
-Dit is het **Nederlandse profiel** voor de internationale **OAuth** API-standaard.
+Dit is het **Nederlandse profiel** voor de internationale **CloudEvents** berichtstandaard.
 
 Bekijk hier de **laatste vastgestelde versie** van de standaard:
 
-https://publicatie.centrumvoorstandaarden.nl/api/oauth/
-
 Bekijk hier **de laatste werkversie** van de standaard:
 
-https://Logius-standaarden.github.io/OAuth-NL-profiel
 
 **Deze repositorie**:
 
-https://github.com/Logius-standaarden/OAuth-NL-profiel
+https://github.com/adgerrits/CloudEvents-NL-profiel 

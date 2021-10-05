@@ -15,23 +15,23 @@ var respecConfig = {
       companyURL: "http://www.organisatie.nl/",
     },
   ],
-  shortName: "Nederlands profiel OAuth 2.0",
+  shortName: "Nederlands profiel CloudEvents 2.0",
   subtitle: "Werkversie",
-  github: "https://github.com/Logius-standaarden/KP-APIs-OAuthNL",
-  issueBase: "https://github.com/Logius-standaarden/KP-APIs-OAuthNL/issues/",
+  github: "https://github.com/Logius-standaarden/KP-APIs-CloudEventsNL",
+  issueBase: "https://github.com/Logius-standaarden/KP-APIs-CloudEventsNL/issues/",
   localBiblio: {
-    "OAuth2": {
+    "CloudEvents2": {
       href: "https://tools.ietf.org/html/rfc6749",
       title:
-        "The OAuth 2.0 Authorization Framework",
+        "The CloudEvents 2.0 Authorization Framework",
       authors: ["D. Hardt"],
       date: "October 2012",
       publisher: "The Internet Engineering Task Force",
     },
 	"Expert": {
-      href: "https://www.forumstandaardisatie.nl/sites/bfs/files/Expertadvies%20OAuth%202.0.pdf",
+      href: "https://www.forumstandaardisatie.nl/sites/bfs/files/Expertadvies%20CloudEvents%202.0.pdf",
       title:
-        "Expertadvies OAuth 2.0",
+        "Expertadvies CloudEvents 2.0",
       authors: ["P. Dam"],
       date: "24 februari 2017",
       publisher: "Forum STandaardisatie",

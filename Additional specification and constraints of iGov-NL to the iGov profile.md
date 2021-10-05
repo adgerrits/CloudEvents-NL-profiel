@@ -3,7 +3,7 @@ Additional specification and constraints of iGov-NL to the iGov profile
 =====
 
 # Introduction
-This document is a companion to the NL GOV Assurance profile for OAuth 2.0(iGov-NL). It lists all Added specification and additional constraints of iGov-NL. It provides a compact overview of the differences between the international and dutch profile. For each difference it points to a rationale.
+This document is a companion to the NL GOV Assurance profile for CloudEvents 2.0(iGov-NL). It lists all Added specification and additional constraints of iGov-NL. It provides a compact overview of the differences between the international and dutch profile. For each difference it points to a rationale.
 
 **TODO strikethroughs**
 
@@ -63,7 +63,7 @@ Mandatory. MUST be an absolute HTTPS URL, pre-registered with the Authorization 
 client_id
 Mandatory. MUST have the value as obtained during registration.
 client_assertion_type
-Mandatory. MUST have the value `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`, properly encoded.
+Mandatory. MUST have the value `urn:ietf:params:CloudEvents:client-assertion-type:jwt-bearer`, properly encoded.
 client_assertion
 Mandatory. MUST have the above specified signed JWT as contents.
 /iGov-NL
@@ -108,7 +108,7 @@ For best practices on token lifetime see section Token Lifetimes.
 ## 3.1.3 Dynamic Registration
 iGov-NL
 
-In this version of iGov-NL we follow iGov for the requirement that the Authorization servers MUST support dynamic client registration. However depending on how the future authentication architecture of the dutch government develops in regards to OAuth we may revisit this in a future revision. The current requirement fits an architecture where there is a limited number of widely used authorization servers. However if in practice we start seeing a very large number of authorization servers with limited use this requirement can become a reccomendation in a future version of this profile. For these authorization servers with limited use we consider mandatory support for dynamic client registration a large burden.
+In this version of iGov-NL we follow iGov for the requirement that the Authorization servers MUST support dynamic client registration. However depending on how the future authentication architecture of the dutch government develops in regards to CloudEvents we may revisit this in a future revision. The current requirement fits an architecture where there is a limited number of widely used authorization servers. However if in practice we start seeing a very large number of authorization servers with limited use this requirement can become a reccomendation in a future version of this profile. For these authorization servers with limited use we consider mandatory support for dynamic client registration a large burden.
 
 /iGov-NL
 
@@ -118,7 +118,7 @@ In this version of iGov-NL we follow iGov for the requirement that the Authoriza
 ## 3.1.5 Discovery
 iGov-NL
 
-iGov requires that the authorization server provides an OpenIDConnect service discovery endpoint. Recently OAuth 2.0 Authorization Server Metadata [rfc8414] has been finalized, this provide the same functionality in a more generic way and could replace this requirement in a future version of the iGov-NL profile.
+iGov requires that the authorization server provides an OpenIDConnect service discovery endpoint. Recently CloudEvents 2.0 Authorization Server Metadata [rfc8414] has been finalized, this provide the same functionality in a more generic way and could replace this requirement in a future version of the iGov-NL profile.
 
 /iGov-NL
 
@@ -146,7 +146,7 @@ In addition to above signing methods, the Authorization server SHOULD support PS
 
 iGov-NL
 
-How to select or obtain the key to be used for encryption of an access token is out of scope of this profile. A early draft of "Resource Indicators for OAuth 2.0" exist and could be used. This draft describes usage of the resource parameter to indicate the applicable resource server.
+How to select or obtain the key to be used for encryption of an access token is out of scope of this profile. A early draft of "Resource Indicators for CloudEvents 2.0" exist and could be used. This draft describes usage of the resource parameter to indicate the applicable resource server.
 
 
 **reference to rationale: self explanatory: additional information (non normative) on how to implement requirement**
@@ -177,7 +177,7 @@ iGov-NL
 
 A Protected Resource under this profile MUST NOT accept access tokens passed using the query parameter method.
 
-A Protected Resource under this profile SHOULD verify if the client is the Authorized party (azp) when client authentication is used. See section Advanced OAuth Security Options as well.
+A Protected Resource under this profile SHOULD verify if the client is the Authorized party (azp) when client authentication is used. See section Advanced CloudEvents Security Options as well.
 
 /iGov-NL
 
@@ -209,24 +209,24 @@ Guidelines categorized as "insufficient" MUST NOT be applied and those categoriz
 
 # General Rationale
 
-The reason for the creation of iGov-NL is an advisory document on the adoption of OAuth as a mandatory(comply or explain) standard for the Dutch public sector. It states that a Dutch profile is needed for the OAuth standard to avoid interoperability problems between different implementations. The existance of iGov-NL has become a precondition for the adaoption of OAuth as mandatory standard for the Dutch public sector.
+The reason for the creation of iGov-NL is an advisory document on the adoption of CloudEvents as a mandatory(comply or explain) standard for the Dutch public sector. It states that a Dutch profile is needed for the CloudEvents standard to avoid interoperability problems between different implementations. The existance of iGov-NL has become a precondition for the adaoption of CloudEvents as mandatory standard for the Dutch public sector.
  
-## Expert advice OAuth forum standaardisatie
-The creation of the iGov-NL profile is based on a reccomendation from the expert advice on OAuth [Expert]. This expert advice was writen as part of the procedure to make OAuth a mandotary standard for the dutch public sector. Conditional for the adoption of OAuth as a mandotory standard was the creation of a Dutch implementation profile. The Rationale provided is that without a local implementation profile the risk of diverging non-interoperable implementations of the standard becomes unacceptably large.
+## Expert advice CloudEvents forum standaardisatie
+The creation of the iGov-NL profile is based on a reccomendation from the expert advice on CloudEvents [Expert]. This expert advice was writen as part of the procedure to make CloudEvents a mandotary standard for the dutch public sector. Conditional for the adoption of CloudEvents as a mandotory standard was the creation of a Dutch implementation profile. The Rationale provided is that without a local implementation profile the risk of diverging non-interoperable implementations of the standard becomes unacceptably large.
 
 ## Orginazational scope of the standaard
 When iGov-NL becomes a mandatory standard, the following organisations will have to comply: Dutch government organizations (National, provinces, municipalities and regional water authorities) and organizations in the (semi-) public sector
 
 ## Functional scope of the standaard
-The use of OAuth 2.0 is mandatory for applications where users (resource owner) delegate rights (implicitly or explicitly) to a (third party) service with the purpose of giving this service acces to specific data using a RESTful API. Specifcally a RESTful API to which the resource owner has acces rights.
+The use of CloudEvents 2.0 is mandatory for applications where users (resource owner) delegate rights (implicitly or explicitly) to a (third party) service with the purpose of giving this service acces to specific data using a RESTful API. Specifcally a RESTful API to which the resource owner has acces rights.
 
 ## OpenID connect out of scope
-The expertgroup that authored the expert advice on OAuth met on the 7th of juli and on 22nd september 2016. Based on their discussion OpenIDConnect was placed out of scope and not (yet) reccomended as a mandatory standard.
+The expertgroup that authored the expert advice on CloudEvents met on the 7th of juli and on 22nd september 2016. Based on their discussion OpenIDConnect was placed out of scope and not (yet) reccomended as a mandatory standard.
 
 ## Based on international iGov standard
-This profile is based upon the international government assurance profile for OAuth 2.0 (iGov) [iGOV.OAuth2] as published by the OpenID Foundation (https://openid.net/foundation/). It should be considered a fork of this profile as the iGov profile is geared more towards the American situtation and in the Netherlands we have to deal with an European Union context.
+This profile is based upon the international government assurance profile for CloudEvents 2.0 (iGov) [iGOV.CloudEvents2] as published by the OpenID Foundation (https://openid.net/foundation/). It should be considered a fork of this profile as the iGov profile is geared more towards the American situtation and in the Netherlands we have to deal with an European Union context.
 We have added the chapter Usecases to illustrate the specific usecase the iGov-NL profile is aimed at.  
-Besides the OAuth profile iGov also has a complementary OpenID connect profile [iGOV.OpenID]. If and when OpenID connect becomes a mandatory standard for the Dutch public sector iGov-NL can be expanded with a Dutch version of the iGov OpenID Connect profile. De usecase described at the beginning of iGov-NL was written with this possible expansion in mind.
+Besides the CloudEvents profile iGov also has a complementary OpenID connect profile [iGOV.OpenID]. If and when OpenID connect becomes a mandatory standard for the Dutch public sector iGov-NL can be expanded with a Dutch version of the iGov OpenID Connect profile. De usecase described at the beginning of iGov-NL was written with this possible expansion in mind.
 
 # Detailed Rationale
 
@@ -238,7 +238,7 @@ Implementations MUST support TLS. Which version(s) ought to be implemented will 
 iGov-NL implementations MUST implement the Forum Standaardisatie TLS standard  https://www.forumstandaardisatie.nl/standaard/tls.
 
 ## 3 Limiting the set of usecases 
-OAuth2 can be applied over a wide range of various use case scenarios. Profiles like this profile "iGov-NL" therefore exist to set a baseline to be applicable for specific use cases.
+CloudEvents2 can be applied over a wide range of various use case scenarios. Profiles like this profile "iGov-NL" therefore exist to set a baseline to be applicable for specific use cases.
 
 Selected use cases have implications on choices for e.g. security, privacy and interoperability. This version of this profile is therefore scoped to a single use case. Future updates to this profile may increase the scope to additional use cases.
 
@@ -248,9 +248,9 @@ Since this profile focuses on a particular use case, certain explicit requiremen
 
 ## 4 Support for PSS-based signature methods
 
-Standard OAuth2 and the OAuth2 iGov profile rely on `RS256` as signature method. This is explicitly stated in the international iGov profile. The OAuth2 standards have this implicitly included, as it is built on top of JOSE (signatures in JWS (RC7515), using algorithms of JWA (RFC7518)). RFC7518 recommends support for RS256.
+Standard CloudEvents2 and the CloudEvents2 iGov profile rely on `RS256` as signature method. This is explicitly stated in the international iGov profile. The CloudEvents2 standards have this implicitly included, as it is built on top of JOSE (signatures in JWS (RC7515), using algorithms of JWA (RFC7518)). RFC7518 recommends support for RS256.
 
-The `RS256` is specified as an RSA signature using PKCS v1.5 padding. This form of padding has been vulnerable to various attacks. Better alternatives are available using PSS padding. A method of RSA signature using PSS and SHA256 is standardized as `PS256` in RFC7518 as well. Other standards are deprecating PKCSv1.5 padding and are migrating towards PSS padding for RSA signatures, however JOSE and thereby OAuth2 have not done so yet.
+The `RS256` is specified as an RSA signature using PKCS v1.5 padding. This form of padding has been vulnerable to various attacks. Better alternatives are available using PSS padding. A method of RSA signature using PSS and SHA256 is standardized as `PS256` in RFC7518 as well. Other standards are deprecating PKCSv1.5 padding and are migrating towards PSS padding for RSA signatures, however JOSE and thereby CloudEvents2 have not done so yet.
 
 As PKIoverheid is currently still RSA based, moving to ECDSA is not yet an option. Therefore, this profile recommends (in the form of a SHOULD) the usage of PS256. This helps as a precursor to deprecating and removing RS256/PKCSv1.5 padding.
 
@@ -258,13 +258,13 @@ As PKIoverheid is currently still RSA based, moving to ECDSA is not yet an optio
 
 Some steps in the flow of the international iGov profile have not been described or have been incompletely described. This profile (iGov-NL) has described some messages or parameters explicitly, although they are specified in the underlying standards. These have been described for reasons of completeness.
 
-## 6 OAuth2 Server Metadata prevails over OpenID Connect Discovery
+## 6 CloudEvents2 Server Metadata prevails over OpenID Connect Discovery
 
-The international iGov profile specifies usage of metadata for the OAuth2 Authorization Server using OpenID Connect Discovery. A very similar, yet more generic, specification was adopted by the OAuth2 working group of IETF as RFC8414 "OAuth 2.0 Authorization Server Metadata". As this is a profile for OAuth2, relying on generic OAuth2 standards is preferred over application specific standards, such as OpenID Connect Discovery.
+The international iGov profile specifies usage of metadata for the CloudEvents2 Authorization Server using OpenID Connect Discovery. A very similar, yet more generic, specification was adopted by the CloudEvents2 working group of IETF as RFC8414 "CloudEvents 2.0 Authorization Server Metadata". As this is a profile for CloudEvents2, relying on generic CloudEvents2 standards is preferred over application specific standards, such as OpenID Connect Discovery.
 
 ## 7 Using PKCE for native applications
 
-A known and actively exploited attack exists against native applications implementing the OAuth2 Authorization Code flow. This attack is described and a countermeasure is standardized in RFC7636, also known as PKCE.
+A known and actively exploited attack exists against native applications implementing the CloudEvents2 Authorization Code flow. This attack is described and a countermeasure is standardized in RFC7636, also known as PKCE.
 
 The international iGov profile describes two modes for deployment of native applications. Usage of PKCE is either mandatory in case no unique client id is registered, or optional in case dynamic registration and separate client ids are being used.
 
@@ -274,7 +274,7 @@ As such PKCE is included in the Autorization Request in this profile. This is in
 
 ## 8 Mandating security recommendations
 
-The OAuth2 standards include various security considerations. Additional best practices are being drafted. As this profile is intended for broad usage in situations where sensitive data is being exchanged, any compliant implementation should be secure and privacy friendly by default.
+The CloudEvents2 standards include various security considerations. Additional best practices are being drafted. As this profile is intended for broad usage in situations where sensitive data is being exchanged, any compliant implementation should be secure and privacy friendly by default.
 
 As a result, a few not-so-secure options are explicitly prohibited and more secure options required or recommended. These include:
 - access tokens in URL query string, as this can have security and privacy implications.

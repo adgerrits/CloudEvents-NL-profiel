@@ -1,5 +1,5 @@
-﻿# Dutch government Assurance profile for OAuth 2.0  
-This profile is based upon the international government assurance profile for OAuth 2.0 (iGov) [[iGOV.OAuth2]] as published by the OpenID Foundation (https://openid.net/foundation/). It should be considered a fork of this profile as the iGov profile is geared more towards the American situtation and in the Netherlands we have to deal with an European Union context. 
+﻿# Dutch government Assurance profile for CloudEvents 2.0  
+This profile is based upon the international government assurance profile for CloudEvents 2.0 (iGov) [[iGOV.CloudEvents2]] as published by the OpenID Foundation (https://openid.net/foundation/). It should be considered a fork of this profile as the iGov profile is geared more towards the American situtation and in the Netherlands we have to deal with an European Union context. 
 
 We have added the chapter [Usecases](#Usecases) to illustrate the specific usecase the iGov-NL profile is aimed at. Starting with chapter [Introduction](#Introduction) we follow the structure of the iGov profile. Where we do not use content from iGov we use ~~strikethrough~~ to indicate it is not part of iGov-NL. Where we have added more specific requirements for the Dutch situation this is indicated with **iGov-NL** tags.
 
@@ -94,13 +94,13 @@ The contents and protocol of the Resource Request and Resource Response are out 
 <!-- ### [1.](#rfc.section.1) [Introduction](#Introduction) -->
 # Introduction  
 
-This document profiles the OAuth 2.0 web authorization framework for use in the context of securing web-facing application programming interfaces (APIs), particularly Representational State Transfer (RESTful) APIs. The OAuth 2.0 specifications accommodate a wide range of implementations with varying security and usability considerations, across different types of software clients. The OAuth 2.0 client, protected resource, and authorization server profiles defined in this document serve two purposes:
+This document profiles the CloudEvents 2.0 web authorization framework for use in the context of securing web-facing application programming interfaces (APIs), particularly Representational State Transfer (RESTful) APIs. The CloudEvents 2.0 specifications accommodate a wide range of implementations with varying security and usability considerations, across different types of software clients. The CloudEvents 2.0 client, protected resource, and authorization server profiles defined in this document serve two purposes:
 
 1.  Define a mandatory baseline set of security controls suitable for a wide range of government use cases, while maintaining reasonable ease of implementation and functionality
 2.  Identify optional, advanced security controls for sensitive use cases where increased risk justifies more stringent controls.
 
 
-This OAuth profile is intended to be shared broadly, and has been ~~greatly influenced by the [HEART OAuth2 Profile][[HEART.OAuth2]].~~ derived from the [iGov OAuth2 profile] [[iGOV.OAuth2]].
+This CloudEvents profile is intended to be shared broadly, and has been ~~greatly influenced by the [HEART CloudEvents2 Profile][[HEART.CloudEvents2]].~~ derived from the [iGov CloudEvents2 profile] [[iGOV.CloudEvents2]].
 
 <!-- ### [1.1.](#rfc.section.1.1) [Requirements Notation and Conventions](#rnc) -->
 ## Requirements Notation and Conventions  
@@ -111,7 +111,7 @@ All uses of [JSON Web Signature (JWS)] [[!rfc7515]] and [JSON Web Encryption (JW
 <!-- ### [1.2.](#rfc.section.1.2) [Terminology](#Terminology) -->
 ## Terminology
 
-This specification uses the terms "Access Token", "Authorization Code", "Authorization Endpoint", "Authorization Grant", "Authorization Server", "Client", "Client Authentication", "Client Identifier", "Client Secret", "Grant Type", "Protected Resource", "Redirection URI", "Refresh Token", "Resource Owner", "Resource Server", "Response Type", and "Token Endpoint" defined by [OAuth 2.0] [[rfc6749]] , the terms "Claim Name", "Claim Value", and "JSON Web Token (JWT)" defined by [JSON Web Token (JWT)] [[rfc7519]] , and the terms defined by [OpenID Connect Core 1.0] [[OpenID.Core]] .
+This specification uses the terms "Access Token", "Authorization Code", "Authorization Endpoint", "Authorization Grant", "Authorization Server", "Client", "Client Authentication", "Client Identifier", "Client Secret", "Grant Type", "Protected Resource", "Redirection URI", "Refresh Token", "Resource Owner", "Resource Server", "Response Type", and "Token Endpoint" defined by [CloudEvents 2.0] [[rfc6749]] , the terms "Claim Name", "Claim Value", and "JSON Web Token (JWT)" defined by [JSON Web Token (JWT)] [[rfc7519]] , and the terms defined by [OpenID Connect Core 1.0] [[OpenID.Core]] .
 
 <!-- ### [1.3.](#rfc.section.1.3) Conformance -->
 ## Conformance
@@ -119,9 +119,9 @@ This specification uses the terms "Access Token", "Authorization Code", "Authori
 
 This specification defines requirements for the following components:
 
-*   OAuth 2.0 clients.
-*   OAuth 2.0 authorization servers.
-*   OAuth 2.0 protected resources.
+*   CloudEvents 2.0 clients.
+*   CloudEvents 2.0 authorization servers.
+*   CloudEvents 2.0 protected resources.
 
 The specification also defines features for interaction between these components:
 
@@ -130,32 +130,32 @@ The specification also defines features for interaction between these components
 
 **iGov-NL**
 
-This profile is based upon the international government assurance profile for OAuth 2.0 (iGov) [iGOV.OAuth2] as published by the OpenID Foundation (https://openid.net/foundation/). It should be considered a fork of this profile as the iGov profile is geared more towards the American situtation and in the Netherlands we have to deal with an European Union context.
+This profile is based upon the international government assurance profile for CloudEvents 2.0 (iGov) [iGOV.CloudEvents2] as published by the OpenID Foundation (https://openid.net/foundation/). It should be considered a fork of this profile as the iGov profile is geared more towards the American situtation and in the Netherlands we have to deal with an European Union context.
 
 **/iGov-NL**
 
 
 When an ~~iGov~~iGov-NL-compliant component is interacting with other ~~iGov~~iGov-NL-compliant components, in any valid combination, all components MUST fully conform to the features and requirements of this specification. All interaction with non-~~iGov~~iGov-NL components is outside the scope of this specification.
 
-An ~~iGov~~iGov-NL-compliant OAuth 2.0 authorization server MUST support all features as described in this specification. A general-purpose authorization server MAY support additional features for use with non-~~iGov~~iGov-NL clients and protected resources.
+An ~~iGov~~iGov-NL-compliant CloudEvents 2.0 authorization server MUST support all features as described in this specification. A general-purpose authorization server MAY support additional features for use with non-~~iGov~~iGov-NL clients and protected resources.
 
-An ~~iGov~~iGov-NL-compliant OAuth 2.0 client MUST use all functions as described in this specification. A general-purpose client library MAY support additional features for use with non-iGov authorization servers and protected resources.
+An ~~iGov~~iGov-NL-compliant CloudEvents 2.0 client MUST use all functions as described in this specification. A general-purpose client library MAY support additional features for use with non-iGov authorization servers and protected resources.
 
-An ~~iGov~~iGov-NL-compliant OAuth 2.0 protected resource MUST use all functions as described in this specification. A general-purpose protected resource library MAY support additional features for use with non-~~iGov~~iGov-NL authorization servers and clients.
+An ~~iGov~~iGov-NL-compliant CloudEvents 2.0 protected resource MUST use all functions as described in this specification. A general-purpose protected resource library MAY support additional features for use with non-~~iGov~~iGov-NL authorization servers and clients.
 <!-- ### [2.](#rfc.section.2) [Client Profiles](#ClientProfiles) -->
 # Client Profiles
 
 <!-- ### [2.1.](#rfc.section.2.1) [Client Types](#ClientTypes) -->
 ## Client Types
 
-The following profile descriptions give patterns of deployment for use in different types of client applications based on the OAuth grant type. Additional grant types, such as assertions, chained tokens, or other mechanisms, are out of scope of this profile and must be covered separately by appropriate profile documents.
+The following profile descriptions give patterns of deployment for use in different types of client applications based on the CloudEvents grant type. Additional grant types, such as assertions, chained tokens, or other mechanisms, are out of scope of this profile and must be covered separately by appropriate profile documents.
 
 <!-- ### [2.1.1.](#rfc.section.2.1.1) [Full Client with User Delegation](#FullClient) -->
 ### Full Client with User Delegation
 
 This client type applies to clients that act on behalf of a particular resource owner and require delegation of that user’s authority to access the protected resource. Furthermore, these clients are capable of interacting with a separate web browser application to facilitate the resource owner's interaction with the authentication endpoint of the authorization server.
 
-These clients MUST use the authorization code flow of OAuth 2 by sending the resource owner to the authorization endpoint to obtain authorization. The user MUST authenticate to the authorization endpoint. The user’s web browser is then redirected back to a URI hosted by the client service, from which the client can obtain an authorization code passed as a query parameter. The client then presents that authorization code along with its own credentials (private_key_jwt) to the authorization server's token endpoint to obtain an access token.
+These clients MUST use the authorization code flow of CloudEvents 2 by sending the resource owner to the authorization endpoint to obtain authorization. The user MUST authenticate to the authorization endpoint. The user’s web browser is then redirected back to a URI hosted by the client service, from which the client can obtain an authorization code passed as a query parameter. The client then presents that authorization code along with its own credentials (private_key_jwt) to the authorization server's token endpoint to obtain an access token.
 
 These clients MUST be associated with a unique public key, as described in [Section 2.2](#ClientRegistration) .
 
@@ -166,7 +166,7 @@ This client type MAY request and be issued a refresh token if the security param
 
 This client type applies to clients that act on behalf of a particular resource owner, such as an app on a mobile platform, and require delegation of that user's authority to access the protected resource. Furthermore, these clients are capable of interacting with a separate web browser application to facilitate the resource owner's interaction with the authentication endpoint of the authorization server. In particular, this client type runs natively on the resource owner's device, often leading to many identical instances of a piece of software operating in different environments and running simultaneously for different end users.
 
-These clients MUST use the authorization code flow of OAuth 2 by sending the resource owner to the authorization endpoint to obtain authorization. The user MUST authenticate to the authorization endpoint. The user is then redirected back to a URI hosted by the client, from which the client can obtain an authorization code passed as a query parameter. The client then presents that authorization code along to the authorization server's token endpoint to obtain an access token.
+These clients MUST use the authorization code flow of CloudEvents 2 by sending the resource owner to the authorization endpoint to obtain authorization. The user MUST authenticate to the authorization endpoint. The user is then redirected back to a URI hosted by the client, from which the client can obtain an authorization code passed as a query parameter. The client then presents that authorization code along to the authorization server's token endpoint to obtain an access token.
 
 Native clients MUST either:
 
@@ -192,7 +192,7 @@ Direct Access Clients are out of scope in this version of iGov-NL.
 
 ~~This profile applies to clients that connect directly to protected resources and do not act on behalf of a particular resource owner, such as those clients that facilitate bulk transfers.~~
 
-~~These clients use the client credentials flow of OAuth 2 by sending a request to the token endpoint with the client's credentials and obtaining an access token in the response. Since this profile does not involve an authenticated user, this flow is appropriate only for trusted applications, such as those that would traditionally use a developer key. For example, a partner system that performs bulk data transfers between two systems would be considered a direct access client.~~
+~~These clients use the client credentials flow of CloudEvents 2 by sending a request to the token endpoint with the client's credentials and obtaining an access token in the response. Since this profile does not involve an authenticated user, this flow is appropriate only for trusted applications, such as those that would traditionally use a developer key. For example, a partner system that performs bulk data transfers between two systems would be considered a direct access client.~~
 
 <!-- ### [2.2.](#rfc.section.2.2) [Client Registration](#ClientRegistration) -->
 ## Client Registration
@@ -222,7 +222,7 @@ Clients MUST NOT forward values passed back to their redirect URIs to other arbi
 ## Connection to the Authorization Server
 
 
-<!-- ### [2.3.1.](#rfc.section.2.3.1) [Requests to the Authorization Endpoint](#RequestsToAuthorizationEndpoint) -->
+<!-- ### [2.3.1.](#rfc.section.2.3.1) [Requests to the Authorization Endpoint](#RequestsTCloudEventsorizationEndpoint) -->
 ### Requests to the Authorization Endpoint
 
 Full clients and browser-embedded clients making a request to the authorization endpoint MUST use an unpredictable value for the state parameter with at least 128 bits of entropy. Clients MUST validate the value of the <samp>state</samp> parameter upon return to the redirect URI and MUST ensure that the state value is securely tied to the user’s current session (e.g., by relating the state value to a session identifier issued by the client software to the browser).
@@ -298,7 +298,7 @@ Response parameters
 <!-- ### [2.3.2.](#rfc.section.2.3.2) [Requests to the Token Endpoint](#RequestsToTokenEndpoint) -->
 ### Requests to the Token Endpoint
 
-Full clients, native clients with dynamically registered keys, and direct access clients as defined above MUST authenticate to the authorization server's token endpoint using a JWT assertion as defined by the [JWT Profile for OAuth 2.0 Client Authentication and Authorization Grants][[!rfc7523]] using only the <samp>private_key_jwt</samp> method defined in [OpenID Connect Core] [[OpenID.Core]] . The assertion MUST use the claims as follows:
+Full clients, native clients with dynamically registered keys, and direct access clients as defined above MUST authenticate to the authorization server's token endpoint using a JWT assertion as defined by the [JWT Profile for CloudEvents 2.0 Client Authentication and Authorization Grants][[!rfc7523]] using only the <samp>private_key_jwt</samp> method defined in [OpenID Connect Core] [[OpenID.Core]] . The assertion MUST use the claims as follows:
 
 <dl>
 
@@ -359,7 +359,7 @@ Effectively, the Token Request has the following content:
 <dt>client_id</dt>
 <dd>Mandatory. MUST have the value as obtained during registration.</dd>
 <dt>client_assertion_type</dt>
-<dd>Mandatory. MUST have the value `urn:ietf:params:oauth:client-assertion-type:jwt-bearer`, properly encoded.</dd>
+<dd>Mandatory. MUST have the value `urn:ietf:params:CloudEvents:client-assertion-type:jwt-bearer`, properly encoded.</dd>
 <dt>client_assertion</dt>
 <dd>Mandatory. MUST have the above specified signed JWT as contents.</dd>
 </dl>
@@ -383,7 +383,7 @@ This is sent in the request to the token endpoint as in the following example:
 
 <pre>POST /token HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
-User-Agent: Rack::OAuth2 (1.0.8.7) (2.5.3.2, ruby 2.1.3 (2014-09-19))
+User-Agent: Rack::CloudEvents2 (1.0.8.7) (2.5.3.2, ruby 2.1.3 (2014-09-19))
 Accept: */*
 Date: Tue, 16 Dec 2014 02:59:48 GMT
 Content-Length: 884
@@ -394,7 +394,7 @@ grant_type=authorization_code
 &scope=openid+email
 &client_id=55f9f559-2496-49d4-b6c3-351a586b7484
 &redirect_uri=https%3A%2F%2Fclient.example.org%2Fcb
-&client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer
+&client_assertion_type=urn%3Aietf%3Aparams%3ACloudEvents%3Aclient-assertion-type%3Ajwt-bearer
 &client_assertion=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.ew0KICAgImlzcyI6ICI1NWY
 5ZjU1OS0yNDk2LTQ5ZDQtYjZjMy0zNTFhNTg2Yjc0ODQiLA0KICAgInN1YiI6ICI1NWY5ZjU1OS0yN
 Dk2LTQ5ZDQtYjZjMy0zNTFhNTg2Yjc0ODQiLA0KICAgImF1ZCI6ICJodHRwczovL2lkcC1wLmV4YW1
@@ -425,7 +425,7 @@ Tn3KaKrsBXwWcfioXR6zQn5eYdZQVGNBfOR4rxF5i7t3hfb4WkS50EK1gBYk2lO9NSrQ-xG
 0l0fw7jUI6rHLHf4d96_neR1HrNIK_xssr99Xpv1EM_ubxpktX0T925-qej9fMEpzzQ5HLm
 cNt1H2_VQ_Ww1JOLn9vRn-H48FDj7TxlIT74XdTZgTv31w_GRPAOfyxEw_ZUmxhz5Z-gTlQ",
        "kty": "RSA",
-       "kid": "oauth-client"
+       "kid": "CloudEvents-client"
      }
    ]
 }
@@ -456,7 +456,7 @@ sAnN6RHksXqsdOqv-nxjLexDfIJlgbcCN9h6TB-C66ZXv7PVhl19gIYVifSU7liHkLe0l0f
 w7jUI6rHLHf4d96_neR1HrNIK_xssr99Xpv1EM_ubxpktX0T925-qej9fMEpzzQ5HLmcNt1
 H2_VQ_Ww1JOLn9vRn-H48FDj7TxlIT74XdTZgTv31w_GRPAOfyxEw_ZUmxhz5Z-gTlQ",
    "kty": "RSA",
-   "kid": "oauth-client"
+   "kid": "CloudEvents-client"
 }
 </pre>
 
@@ -472,7 +472,7 @@ Note that the second example contains both the public and private keys, while th
 
 Clients SHOULD send bearer tokens passed in the Authentication header as defined by [[rfc6750]] . Clients MAY use the form-parameter ~~or query-parameter~~ method~~s~~ in [[rfc6750]] . Authorized requests MUST be made over TLS, and clients MUST validate the protected resource server's certificate.
 
-An example of an OAuth-protected call to the OpenID Connect UserInfo endpoint, sending the token in the Authorization header, follows:
+An example of an CloudEvents-protected call to the OpenID Connect UserInfo endpoint, sending the token in the Authorization header, follows:
 
 <pre>GET /userinfo HTTP/1.1
 Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJleHAiOjE0MTg3MDI0MTIsImF1ZCI6WyJjMWJjOD
@@ -492,9 +492,9 @@ User-Agent: Apache-HttpClient/4.2.3 (java 1.5)
 <!-- ### [3.](#rfc.section.3) [Authorization Server Profile](#ServerProfile) -->
 # Authorization Server Profile
 
-All servers MUST conform to applicable recommendations found in the Security Considerations sections of [[rfc6749]] and those found in the "OAuth Threat Model Document" [[rfc6819]] .
+All servers MUST conform to applicable recommendations found in the Security Considerations sections of [[rfc6749]] and those found in the "CloudEvents Threat Model Document" [[rfc6819]] .
 
-The authorization server MUST protect all communications to and from its OAuth endpoints using TLS.
+The authorization server MUST protect all communications to and from its CloudEvents endpoints using TLS.
 
 <!-- ### [3.1.](#rfc.section.3.1) Connections with clients -->
 ## Connections with clients
@@ -544,7 +544,7 @@ Authorization servers MAY protect their Dynamic Registration endpoints by requir
 
 **iGov-NL**
 
-In this version of iGov-NL we follow iGov for the requirement that the Authorization servers MUST support dynamic client registration. However depending on how the future authentication architecture of the Dutch government develops in regards to OAuth we may revisit this in a future revision. The current requirement fits an architecture where there is a limited number of widely used authorization servers. However if in practice we start seeing a very large number of authorization servers with limited use this requirement can become a reccomendation in a future version of this profile. For these authorization servers with limited use we consider mandatory support for dynamic client registration a large burden.
+In this version of iGov-NL we follow iGov for the requirement that the Authorization servers MUST support dynamic client registration. However depending on how the future authentication architecture of the Dutch government develops in regards to CloudEvents we may revisit this in a future revision. The current requirement fits an architecture where there is a limited number of widely used authorization servers. However if in practice we start seeing a very large number of authorization servers with limited use this requirement can become a reccomendation in a future version of this profile. For these authorization servers with limited use we consider mandatory support for dynamic client registration a large burden.
 
 **/iGov-NL**
 
@@ -562,7 +562,7 @@ For example, for native clients a message indicating a new App installation has 
 <!-- ### [3.1.5.](#rfc.section.3.1.5) [Discovery](#Discovery) -->
 ### Discovery
 
-The authorization server MUST provide an [OpenID Connect service discovery] [[OpenID.Discovery]] endpoint listing the components relevant to the OAuth protocol:
+The authorization server MUST provide an [OpenID Connect service discovery] [[OpenID.Discovery]] endpoint listing the components relevant to the CloudEvents protocol:
 
 <dl>
 
@@ -572,19 +572,19 @@ The authorization server MUST provide an [OpenID Connect service discovery] [[Op
 
 <dt>authorization_endpoint</dt>
 
-<dd style="margin-left: 8">REQUIRED. The fully qualified URL of the server's authorization endpoint defined by [OAuth 2.0] [[rfc6749]]</dd>
+<dd style="margin-left: 8">REQUIRED. The fully qualified URL of the server's authorization endpoint defined by [CloudEvents 2.0] [[rfc6749]]</dd>
 
 <dt>token_endpoint</dt>
 
-<dd style="margin-left: 8">REQUIRED. The fully qualified URL of the server's token endpoint defined by [OAuth 2.0] [[RFC6749]]</dd>
+<dd style="margin-left: 8">REQUIRED. The fully qualified URL of the server's token endpoint defined by [CloudEvents 2.0] [[RFC6749]]</dd>
 
 <dt>introspection_endpoint</dt>
 
-<dd style="margin-left: 8">OPTIONAL. The fully qualified URL of the server's introspection endpoint defined by [OAuth Token Introspection] [[rfc7662]] </dd>
+<dd style="margin-left: 8">OPTIONAL. The fully qualified URL of the server's introspection endpoint defined by [CloudEvents Token Introspection] [[rfc7662]] </dd>
 
 <dt>revocation_endpoint</dt>
 
-<dd style="margin-left: 8">OPTIONAL. The fully qualified URL of the server's revocation endpoint defined by [OAuth 2.0 Token Revocation] [[rfc7009]] </dd>
+<dd style="margin-left: 8">OPTIONAL. The fully qualified URL of the server's revocation endpoint defined by [CloudEvents 2.0 Token Revocation] [[rfc7009]] </dd>
 
 <dt>jwks_uri</dt>
 
@@ -633,9 +633,9 @@ The following example shows the JSON document found at a discovery endpoint for 
   "grant_types_supported": [
     "authorization_code",
     "implicit",
-    "urn:ietf:params:oauth:grant-type:jwt-bearer",
+    "urn:ietf:params:CloudEvents:grant-type:jwt-bearer",
     "client_credentials",
-    "urn:ietf:params:oauth:grant_type:redelegate"
+    "urn:ietf:params:CloudEvents:grant_type:redelegate"
   ],
   "scopes_supported": [
     "profile", "openid", "email", "address", "phone", "offline_access"
@@ -689,7 +689,7 @@ Clients and protected resources SHOULD cache this key. It is RECOMMENDED that se
 
 **iGov-NL**
 
-iGov requires that the authorization server provides an OpenIDConnect service discovery endpoint. Recently OAuth 2.0 Authorization Server Metadata [[rfc8414]] has been finalized, this provide the same functionality in a more generic way and could replace this requirement in a future version of the iGov-NL profile.
+iGov requires that the authorization server provides an OpenIDConnect service discovery endpoint. Recently CloudEvents 2.0 Authorization Server Metadata [[rfc8414]] has been finalized, this provide the same functionality in a more generic way and could replace this requirement in a future version of the iGov-NL profile.
 
 **/iGov-NL**
 <!-- ### [3.1.6.](#rfc.section.3.1.6) Revocation -->
@@ -750,7 +750,7 @@ For best practices on token lifetime see section [Token Lifetimes](#TokenLifetim
 <!-- ### [3.2.](#rfc.section.3.2) Connections with protected resources -->
 ## Connections with protected resources
 
-Unlike the core OAuth protocol, the ~~iGov~~iGov-NL profile intends to allow compliant protected resources to connect to compliant authorization servers.
+Unlike the core CloudEvents protocol, the ~~iGov~~iGov-NL profile intends to allow compliant protected resources to connect to compliant authorization servers.
 
 <!-- ### [3.2.1.](#rfc.section.3.2.1) [JWT Bearer Tokens](#JWTBearerTokens) -->
 ### JWT Bearer Tokens
@@ -846,7 +846,7 @@ The authorization server MAY encrypt access tokens and refresh tokens using [JWE
 **iGov-NL**
 
 How to select or obtain the key to be used for encryption of an access token is out of scope of this profile.
-A early draft of "Resource Indicators for OAuth 2.0" exist and could be used. This draft describes usage of the <code>resource</code> parameter to indicate the applicable resource server.
+A early draft of "Resource Indicators for CloudEvents 2.0" exist and could be used. This draft describes usage of the <code>resource</code> parameter to indicate the applicable resource server.
 
 In case the Authorization Server, Resource Server and client are not operated under responsibility of the same organisation, each party MUST use PKIoverheid certificates with OIN for encryption.
 
@@ -878,7 +878,7 @@ c9ovpfMB7W6YN53hGU19LtzzFN3tv9FNRq4KIzhK15pns9jckKtui3HZ25L_B
 2Q7xdVyKlInyNPA8gIZK0HVssXxHOI6yRrAqvdMn_sneDTWPrqVpaR_c7rt8D
 dd7drf_nTD1QxESVhYqKTax5Qfd-aq8gZz8gJCzS0yyfQh6DmdhmwgrSCCRC6
 BUQkeFNvjMVEYHQ9fr0NA
-&client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer
+&client_assertion_type=urn%3Aietf%3Aparams%3ACloudEvents%3Aclient-assertion-type%3Ajwt-bearer
 &client_id=a2c36919-01ff-4810-a829-400fad357351
 &token=eyJhbGciOiJSUzI1NiJ9.eyJleHAiOjE0MTg3MDI0MTQsImF1ZCI6W
 yJlNzFmYjcyYS05NzRmLTQwMDEtYmNiNy1lNjdjMmJjMDAzN2YiXSwiaXNzIj
@@ -904,7 +904,7 @@ The server responds to an introspection request with a JSON object representing 
 
 <dt>scope</dt>
 
-<dd style="margin-left: 8">Space-separated list of OAuth 2.0 scope values represented as a single string.</dd>
+<dd style="margin-left: 8">Space-separated list of CloudEvents 2.0 scope values represented as a single string.</dd>
 
 <dt>exp</dt>
 
@@ -916,7 +916,7 @@ The server responds to an introspection request with a JSON object representing 
 
 <dt>client_id</dt>
 
-<dd style="margin-left: 8">An opaque string that uniquely identifies the OAuth 2.0 client that requested this token</dd>
+<dd style="margin-left: 8">An opaque string that uniquely identifies the CloudEvents 2.0 client that requested this token</dd>
 
 </dl>
 
@@ -940,7 +940,7 @@ Connection: close
 }
 </pre>
 
-The authorization server MUST require authentication for both the revocation and introspection endpoints as described in [Section 2.3.2](#RequestsToTokenEndpoint) . Protected resources calling the introspection endpoint MUST use credentials distinct from any other OAuth client registered at the server.
+The authorization server MUST require authentication for both the revocation and introspection endpoints as described in [Section 2.3.2](#RequestsToTokenEndpoint) . Protected resources calling the introspection endpoint MUST use credentials distinct from any other CloudEvents client registered at the server.
 
 A protected resource MAY cache the response from the introspection endpoint for a period of time no greater than half the lifetime of the token. A protected resource MUST NOT accept a token that is not active according to the response from the introspection endpoint.
 
@@ -963,7 +963,7 @@ The following fields MUST be included in the response:
 
 </dl>
 
-PKCE parameters MUST be associated with the "code" as per Section 4.4 of [Proof Key for Code Exchange by OAuth Public Clients (PKCE)] [[rfc7636]]
+PKCE parameters MUST be associated with the "code" as per Section 4.4 of [Proof Key for Code Exchange by CloudEvents Public Clients (PKCE)] [[rfc7636]]
 
 The following is an example response:
 
@@ -1012,7 +1012,7 @@ Authorization servers MAY set the expiry time (<samp>exp</samp>) of access_token
 
 Authorization servers MAY allow a <samp>refresh_token</samp> issued at a higher level to be used to obtain an access_token for a lower level resource scope with an extended expiry time. The client MUST request both the higher level scope and lower level scope in the original authorization request. This allows clients to continue accessing lower level resources after the higher level resource access has expired -- without requiring an additonal user authentication/authorization.
 
-For example: a resource server has resources classified as "public" and "sensitive". "Sensitive" resources require the user to perform a two-factor authentication, and those access grants are short-lived: 15 minutes. For a client to obtain access to both "public" and "sensitive" resources, it makes an authorization request to the authorization server with <samp>scope=public+sensitive</samp>. The authorization server authenticates the end-user as required to meet the required trust level (two-factor authentication or some approved equivalent) and issues an <samp>access_token</samp> for the "public" and "sensitive" scopes with an expiry time of 15mins, and a <samp>refresh_token</samp> for the "public" scope with an expiry time of 24 hrs. The client can access both "public" and "sensitive" resources for 15mins with the access_token. When the access_token expires, the client will NOT be able to access "public" or "sensitive" resources any longer as the access_token has expired, and must obtain a new access_token. The client makes a access grant request (as described in [OAuth 2.0] [[rfc6749]] section 6) with the refresh_token, and the reduced scope of just "public". The token endpoint validates the refresh_token, and issues a new access_token for just the "public" scopewith an expiry time set to 24hrs. An access grant request for a new access_token with the "sensitive" scope would be rejected, and require the client to get the end-user to re-authenticate/authorize the "sensitive" scope request.
+For example: a resource server has resources classified as "public" and "sensitive". "Sensitive" resources require the user to perform a two-factor authentication, and those access grants are short-lived: 15 minutes. For a client to obtain access to both "public" and "sensitive" resources, it makes an authorization request to the authorization server with <samp>scope=public+sensitive</samp>. The authorization server authenticates the end-user as required to meet the required trust level (two-factor authentication or some approved equivalent) and issues an <samp>access_token</samp> for the "public" and "sensitive" scopes with an expiry time of 15mins, and a <samp>refresh_token</samp> for the "public" scope with an expiry time of 24 hrs. The client can access both "public" and "sensitive" resources for 15mins with the access_token. When the access_token expires, the client will NOT be able to access "public" or "sensitive" resources any longer as the access_token has expired, and must obtain a new access_token. The client makes a access grant request (as described in [CloudEvents 2.0] [[rfc6749]] section 6) with the refresh_token, and the reduced scope of just "public". The token endpoint validates the refresh_token, and issues a new access_token for just the "public" scopewith an expiry time set to 24hrs. An access grant request for a new access_token with the "sensitive" scope would be rejected, and require the client to get the end-user to re-authenticate/authorize the "sensitive" scope request.
 
 In this manner, protected resources and authorization servers work together to meet risk tolerance levels for sensitive resources and end-user authentication.
 
@@ -1023,8 +1023,8 @@ In this manner, protected resources and authorization servers work together to m
 
 ```
 Client ID: h_CQcGxzWuZdEaqE0V_Lww_2kxEa
-Callback URL: http://wso2is.local:8080/playground2/oauth2client
-Authroization Endpoint: https://localhost:9443/oauth2/authorize
+Callback URL: http://wso2is.local:8080/playground2/CloudEvents2client
+Authroization Endpoint: https://localhost:9443/CloudEvents2/authorize
 Code Challange: YlbgC6e6H2Exd8XB06xQXTdmgIWcnocFj0eqaJ6IpO8
 Code verifier: a27f9f621eec49789dd92eca40257528d0932fd31e9b4431901f2ea531a6de40  
 ``` 
@@ -1033,14 +1033,14 @@ Code verifier: a27f9f621eec49789dd92eca40257528d0932fd31e9b4431901f2ea531a6de40
 
 ```
 GET 302: 
-https://localhost:9443/oauth2/authorize?scope=default&response_type=code&code_challenge_method=S256&redirect_uri=http://wso2is.local:8080/playground2/oauth2client&code_challenge=YlbgC6e6H2Exd8XB06xQXTdmgIWcnocFj0eqaJ6IpO8&client_id=h_CQcGxzWuZdEaqE0V_Lww_2kxEa
+https://localhost:9443/CloudEvents2/authorize?scope=default&response_type=code&code_challenge_method=S256&redirect_uri=http://wso2is.local:8080/playground2/CloudEvents2client&code_challenge=YlbgC6e6H2Exd8XB06xQXTdmgIWcnocFj0eqaJ6IpO8&client_id=h_CQcGxzWuZdEaqE0V_Lww_2kxEa
 
 GET 200:
-http://wso2is.local:8080/playground2/oauth2client?code=72cb602f-dac0-346f-a36e-676ad21addb1
+http://wso2is.local:8080/playground2/CloudEvents2client?code=72cb602f-dac0-346f-a36e-676ad21addb1
 
 code: 72cb602f-dac0-346f-a36e-676ad21addb1
-Callback URL: http://wso2is.local:8080/playground2/oauth2client
-Access Token Endpoint : https://localhost:9443/oauth2/token
+Callback URL: http://wso2is.local:8080/playground2/CloudEvents2client
+Access Token Endpoint : https://localhost:9443/CloudEvents2/token
 client secret: _ckQ2Q6BpqnofMQcVkBlc1VAY3oa
 PKCE Verifier: a27f9f621eec49789dd92eca40257528d0932fd31e9b4431901f2ea531a6de40
 ```
@@ -1058,7 +1058,7 @@ A protected resource MUST accept bearer tokens passed in the authorization heade
 
 A Protected Resource under this profile MUST NOT accept access tokens passed using the query parameter method.
 
-A Protected Resource under this profile SHOULD verify if the client is the Authorized party (azp) when client authentication is used. See section [Advanced OAuth Security Options](#AdvancedSecurity) as well.
+A Protected Resource under this profile SHOULD verify if the client is the Authorized party (azp) when client authentication is used. See section [Advanced CloudEvents Security Options](#AdvancedSecurity) as well.
 
 **/iGov-NL**
 
@@ -1074,17 +1074,17 @@ The protected resource MUST check the <samp>aud</samp> (audience) claim, if it e
 
 A protected resource MUST limit which authorization servers it will accept valid tokens from. A resource server MAY accomplish this using a whitelist of trusted servers, a dynamic policy engine, or other means.
 
-<!-- ### [5.](#rfc.section.5) [Advanced OAuth Security Options](#AdvancedSecurity) -->
-# Advanced OAuth Security Options
+<!-- ### [5.](#rfc.section.5) [Advanced CloudEvents Security Options](#AdvancedSecurity) -->
+# Advanced CloudEvents Security Options
 
-The preceding portions of this OAuth profile provide a level of security adequate for a wide range of use cases, while still maintaining relative ease of implementation and usability for developers, system administrators, and end users. The following are some additional security measures that can be employed for use cases where elevated risks justify the use of additional controls at the expense of implementation effort and usability. This section also addresses future security capabilities, currently in the early draft stages, being added to the OAuth standard suite.
+The preceding portions of this CloudEvents profile provide a level of security adequate for a wide range of use cases, while still maintaining relative ease of implementation and usability for developers, system administrators, and end users. The following are some additional security measures that can be employed for use cases where elevated risks justify the use of additional controls at the expense of implementation effort and usability. This section also addresses future security capabilities, currently in the early draft stages, being added to the CloudEvents standard suite.
 
 <!-- ### [5.1.](#rfc.section.5.1) [Proof of Possession Tokens](#PoPTokens) -->
 ## Proof of Possession Tokens
 
-OAuth proof of possession tokens are currently defined in a set of drafts under active development in the Internet Engineering Task Force (IETF) OAuth Working Group. While a bearer token can be used by anyone in possession of the token, a proof of possession token is bound to a particular symmetric or asymmetric key issued to, or already possessed by, the client. The association of the key to the token is also communicated to the protected resource; a variety of mechanisms for doing this are outlined in the draft [OAuth 2.0 Proof-of-Possession (PoP) Security Architecture] [[I-D.ietf-oauth-pop-architecture]] . When the client presents the token to the protected resource, it is also required to demonstrate possession of the corresponding key (e.g., by creating a cryptographic hash or signature of the request).
+CloudEvents proof of possession tokens are currently defined in a set of drafts under active development in the Internet Engineering Task Force (IETF) CloudEvents Working Group. While a bearer token can be used by anyone in possession of the token, a proof of possession token is bound to a particular symmetric or asymmetric key issued to, or already possessed by, the client. The association of the key to the token is also communicated to the protected resource; a variety of mechanisms for doing this are outlined in the draft [CloudEvents 2.0 Proof-of-Possession (PoP) Security Architecture] [[I-D.ietf-CloudEvents-pop-architecture]] . When the client presents the token to the protected resource, it is also required to demonstrate possession of the corresponding key (e.g., by creating a cryptographic hash or signature of the request).
 
-Proof of Possession tokens are somewhat analogous to the Security Assertion Markup Language's (SAML's) Holder-of-Key mechanism for binding assertions to user identities. Proof of possession could prevent a number of attacks on OAuth that entail the interception of access tokens by unauthorized parties. The attacker would need to obtain the legitimate client's cryptographic key along with the access token to gain access to protected resources. Additionally, portions of the HTTP request could be protected by the same signature used in presentation of the token. Proof of possession tokens may not provide all of the same protections as PKI authentication, but they are far less challenging to implement on a distributed scale.
+Proof of Possession tokens are somewhat analogous to the Security Assertion Markup Language's (SAML's) Holder-of-Key mechanism for binding assertions to user identities. Proof of possession could prevent a number of attacks on CloudEvents that entail the interception of access tokens by unauthorized parties. The attacker would need to obtain the legitimate client's cryptographic key along with the access token to gain access to protected resources. Additionally, portions of the HTTP request could be protected by the same signature used in presentation of the token. Proof of possession tokens may not provide all of the same protections as PKI authentication, but they are far less challenging to implement on a distributed scale.
 
 **iGov-NL**
 
@@ -1109,7 +1109,7 @@ In addition to the Best Current Practice for TLS, it is highly RECOMMENDED for a
 
 Authorization Servers SHOULD take into account device postures when dealing with native apps if possible. Device postures include characteristics such as a user's lock screen setting, or if the app has 'root access' (meaning the device OS may be compromised to gain additional privilages not intended by the vendor), or if there is a device attestation for the app for its validity. Specific policies or capabilities are outside the scope of this specification.
 
-All clients MUST conform to applicable recommendations found in the Security Considerations sections of [[rfc6749]] and those found in the [OAuth 2.0 Threat Model and Security Considerations document] [[rfc6819]] .
+All clients MUST conform to applicable recommendations found in the Security Considerations sections of [[rfc6749]] and those found in the [CloudEvents 2.0 Threat Model and Security Considerations document] [[rfc6819]] .
 
 <!-- ### [7.](#rfc.references) Normative References -->
 # Normative References

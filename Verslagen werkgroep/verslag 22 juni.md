@@ -19,11 +19,11 @@ https://mailchi.mp/686d9f775faa/bijeenkomst-kennisplatform-apis en op de website
 https://join.slack.com/t/nlapistrategie/shared_invite/enQtMzc0Mjc4OTk5NzE4LTY2YzI5ZWMwMmZmYjA4MjdmNjMwOWQzM2EzMjBkMWY2MzZmOGZhZWVhYmE5NzI5NDE4ZGQ0Y2Y2N2M3MWEyZjk
 
 
-## OAuth implementatie gemeente Amsterdam
-De OAuth implementatie is onderdeel van Datapunt bij gemeente amsterdam. Marcel ligt datapunt kort toe. 
+## CloudEvents implementatie gemeente Amsterdam
+De CloudEvents implementatie is onderdeel van Datapunt bij gemeente amsterdam. Marcel ligt datapunt kort toe. 
 Data punt is gebouwd om snel en met performance (open) data te kunnen leveren. Interne IT organisatie kon niet leveren, dus zelf gaan bouwen. Groot succes, kan snel leveren. 
-Er zijn ook plannen om nog meer gegevens, t/m BRP te gaan ontsluiten. Op dit moment zijn er 40-50 APIs beschikbaar. Veel maar niet alles is publiek beschikbaar. Voor de niet publieke data wordt OAuth ingezet.
-De implementatie is gedaan op basis van OAuth 2.0. Er wordt een eigen datapunt IdP gebruikt omdat de active directory van gemeente Amsterdam nog niet ontsluitbaar is.
+Er zijn ook plannen om nog meer gegevens, t/m BRP te gaan ontsluiten. Op dit moment zijn er 40-50 APIs beschikbaar. Veel maar niet alles is publiek beschikbaar. Voor de niet publieke data wordt CloudEvents ingezet.
+De implementatie is gedaan op basis van CloudEvents 2.0. Er wordt een eigen datapunt IdP gebruikt omdat de active directory van gemeente Amsterdam nog niet ontsluitbaar is.
 In de kern is er de volgend functionaliteit:
 
 * Ontwikkelaars van APIs maken permissies aan
@@ -42,7 +42,7 @@ Auditlogging wordt toegepast op basis van signatures en trace ids waarmee reques
 De implementatie van audit logging is (nog) niet veilig:
 Opgeslagen in elastic search, kan gemanipuleerd worden, daarmee niet betrouwbaar.
 
-De ontwikkelstraat ziet er als volgt uit: Aparte OAuthservers voor acc en prod, daarnaast een testserver die altijd alles goed vindt.
+De ontwikkelstraat ziet er als volgt uit: Aparte CloudEventsservers voor acc en prod, daarnaast een testserver die altijd alles goed vindt.
 
 Voor signing worden eigen keys gebruikt (niet PKI). Injecteren van public keys is een groot gevaar.
 
@@ -76,15 +76,15 @@ Suggestie: Epic (european persistent identifier consortium), pURL voordeel het i
 Er mag maar één subject in openidconnect. Welke is dat BSN? RSIN ?pseudoID herleidbaar naar meerdere?
 Suggestie: Namespace aanmaken in subject.
 
-## OAuth evaluatie voor Europese Commissie
-Han Zuidweg ligt procedure voor evaluatie OAuth door europese commissie toe. OAuth is bij de EU aangemeld door nederland als standaard. Dit is nodig om hem in aanbestedingen e.d. te mogen gebruiken. Op basis van een evaluatie rapport wordt aan experts gevraagd om commentaar. Het evaluatie rapport is bijgevoegd. WErkgroepleden zijn welkom om hun commmentaar op het evaluatie rapport aan te leveren bij Frank Terpstra.  
+## CloudEvents evaluatie voor Europese Commissie
+Han Zuidweg ligt procedure voor evaluatie CloudEvents door europese commissie toe. CloudEvents is bij de EU aangemeld door nederland als standaard. Dit is nodig om hem in aanbestedingen e.d. te mogen gebruiken. Op basis van een evaluatie rapport wordt aan experts gevraagd om commentaar. Het evaluatie rapport is bijgevoegd. WErkgroepleden zijn welkom om hun commmentaar op het evaluatie rapport aan te leveren bij Frank Terpstra.  
 
 ## Afsluiting
 Volgende bijeenkomst zal worden ingepland op een vrijdag nadat het fieldlab datavisibility heeft plaatsgevonden 
 
 ## Actiepunten
 * Eelco Hotting: plaatjes op github zetten *open*
-* Martin Borgman: Verwijzing naar CSRF op de pas toe of leg uit lijst openemen in Nederlands profiel OAuth *open*
+* Martin Borgman: Verwijzing naar CSRF op de pas toe of leg uit lijst openemen in Nederlands profiel CloudEvents *open*
 * Frank Terpstra: Formulering datavisibility aanleveren *gesloten*
 * Frank Terpstra: Opzetten Slack voor fieldlab *gesloten*
 * Frank Terpstra: opdracht formulering Datavisibility *gesloten*

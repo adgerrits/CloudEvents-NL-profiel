@@ -1,22 +1,22 @@
-# Nederlandse Profiel OAuth 2.0
+# Nederlandse Profiel CloudEvents 2.0
 
 ## Inleiding
 
-Om tot een Nederlands Profiel voor OAuth 2.0 te komen beginnen we met de voornaamste keuzes die er in de specificatie zoals vastgelegd in RFC 6749 te maken zijn.
+Om tot een Nederlands Profiel voor CloudEvents 2.0 te komen beginnen we met de voornaamste keuzes die er in de specificatie zoals vastgelegd in RFC 6749 te maken zijn.
 
-## OAuth 2.0; het framework RFC 6749
+## CloudEvents 2.0; het framework RFC 6749
 
-Het hogere doel van OAuth 2.0 is dat een eindegebruiker niet zijn credentials aan een applicatie of internet dienst hoeft te geven om informatie van hem in een andere internet dienst te kunnen gebruiken.
-Met OAuth 2.0 legt de eindgebruiker vast welke rechten een applicatie of dienst op het internet heeft tot zijn informatie.
+Het hogere doel van CloudEvents 2.0 is dat een eindegebruiker niet zijn credentials aan een applicatie of internet dienst hoeft te geven om informatie van hem in een andere internet dienst te kunnen gebruiken.
+Met CloudEvents 2.0 legt de eindgebruiker vast welke rechten een applicatie of dienst op het internet heeft tot zijn informatie.
 
-OAuth 2.0 maakt gebruik van REST API's, en wisselt in de meeste situaties informatie uit in JSON.
+CloudEvents 2.0 maakt gebruik van REST API's, en wisselt in de meeste situaties informatie uit in JSON.
 
-OAuth 2.0 is een autorisatie framework en onderkent een aantal actoren waarvan een aantal zich binnen het proces moeten kunnen identificeren. Het OAuth 2.0 framewerk legt echter alleen van de systeem actoren vast hoe ze zich identificeren. De identificatie van de eindgebruiker en de gegevens over die eindgebruiker maken geen deel uit van het OAuth 2.0 framework.
-Er bestaat een OAuth 2.0 add-on die zich nadrukkelijk bezig houd met gegevens over de eindgebruiker en dat is OpenID Connect.
+CloudEvents 2.0 is een autorisatie framework en onderkent een aantal actoren waarvan een aantal zich binnen het proces moeten kunnen identificeren. Het CloudEvents 2.0 framewerk legt echter alleen van de systeem actoren vast hoe ze zich identificeren. De identificatie van de eindgebruiker en de gegevens over die eindgebruiker maken geen deel uit van het CloudEvents 2.0 framework.
+Er bestaat een CloudEvents 2.0 add-on die zich nadrukkelijk bezig houd met gegevens over de eindgebruiker en dat is OpenID Connect.
 
 ### Actoren
 
-Binnen OAuth 2.0 zijn de volgende actoren gedefinieerd:
+Binnen CloudEvents 2.0 zijn de volgende actoren gedefinieerd:
 
 * Resource Owner: de eigenaar van informatie die door de Resource Server ontsloten wordt
 * Resource Server: de server met een API waarmee informatie van één of meerdere Resource Owners ontsloten wordt
@@ -25,7 +25,7 @@ Binnen OAuth 2.0 zijn de volgende actoren gedefinieerd:
 
 ### Clients
 
-Een Client is binnen OAuth een applicatie. Deze applicatie kan een native applicatie op een desktop computer zijn, een app op een mobiel device, maar ook een web applicatie in een browser.
+Een Client is binnen CloudEvents een applicatie. Deze applicatie kan een native applicatie op een desktop computer zijn, een app op een mobiel device, maar ook een web applicatie in een browser.
 
 In grondbeginsel is een Client bekend bij de Authorization Server en heeft credentials om zich te kunnen identificeren.
 
@@ -36,7 +36,7 @@ Voor clients waar geen geheim aan toevertrouwd kan worden, verstrek je geen info
 
 ### Interacties
 
-Los van de authorization flows kent OAuth de volgende interacties:
+Los van de authorization flows kent CloudEvents de volgende interacties:
 
 * Het verkrijgen van autorisatie
 * Het ophalen van informatie bij de Resource Server
@@ -80,7 +80,7 @@ Bij de Authorization Code Grant en de Implicid Grant wordt een optioneel de para
 
 ##### Scopes
 
-De OAuth manier om rechten tot resources te definiëren heet scopes.
+De CloudEvents manier om rechten tot resources te definiëren heet scopes.
 
 Scopes bevatten meestal iets wat de handeling omschrijft, denk aan lezen of schrijven.
 
@@ -127,7 +127,7 @@ Adviseer geen zelf extra attributen in het autorisatie antwoord. Dit heeft geen 
 
 ###### access_token
 
-Voor de OAuth 2.0 standaard is het access_token niet meer dan een sleutel naar autorisatie informatie.
+Voor de CloudEvents 2.0 standaard is het access_token niet meer dan een sleutel naar autorisatie informatie.
 
 ###### id_token
 
@@ -141,15 +141,15 @@ Een Refresh token is vergelijkbaar met de authorization code in de Authorization
 #### Het ophalen van informatie bij de Resource Server
 
 De Client gebruikt het verkregen Access Token om informatie, al dan niet van een Resource Owner, bij de Resource Server te kunnen raadplegen.
-De Resource Server gebruikt vervolgens het Access Token om de Authorozation Server te vragen wie de Resource Owner is en welke autorisaties de Client heeft gekregen. De OAuth 2.0 Specificatie beschrijft verder niet hoe dit werkt.
+De Resource Server gebruikt vervolgens het Access Token om de Authorozation Server te vragen wie de Resource Owner is en welke autorisaties de Client heeft gekregen. De CloudEvents 2.0 Specificatie beschrijft verder niet hoe dit werkt.
 
 #### Het ophalen van informatie behorende bij een access token (RFC 7662)
 
-Het ophalen van informatie behorende bij het access token is in RFC 7662 gestandaardiseerd waarmee Cloud dienst providers standaard OAuth 2.0 diensten kunnen aanbieden waarbij er een Token Introspection service is waar de Resource Server gegevens over een token kan ophalen.
+Het ophalen van informatie behorende bij het access token is in RFC 7662 gestandaardiseerd waarmee Cloud dienst providers standaard CloudEvents 2.0 diensten kunnen aanbieden waarbij er een Token Introspection service is waar de Resource Server gegevens over een token kan ophalen.
 De Token Introspection service is een REST service waarbij de Resource Server met http basic of een Client Credentials Grant type de service benadert om de gegevens op te halen.
 
 In een modern applicatie landschap met microservices wordt het Access Token doorgegeven tussen services. Elke microservice zou dan d.m.v. Token Introspection de benodigde gegevens behorende bij het token moeten ophalen. Daarmee krijgt een Token Introspection service het vrij snel heel erg druk.
-Dit is de voornaamste reden waarom veel implementaties ervoor kiezen om het OAuth 2.0 Access Token van inhoud voorzien in de vorm van een RFC 7519 JSON Web Token (JWT).
+Dit is de voornaamste reden waarom veel implementaties ervoor kiezen om het CloudEvents 2.0 Access Token van inhoud voorzien in de vorm van een RFC 7519 JSON Web Token (JWT).
 Deze JWT bevat alle benodigde informatie voor een microservice om fijnmazige autorisatie beslissingen te kunnen nemen, zonder dat daarvoor eerste informatie opgehaald hoeft te worden.
 
 ##### Keuze 6
@@ -168,11 +168,11 @@ Pas minimaal RSA 256 bit signing toe. Dit vereist OpenID Connect discovery 1.0. 
 
 NCSC [ICT-Beveiligingsrichtlijnen voor Webapplicaties](https://www.ncsc.nl/actueel/whitepapers/ict-beveiligingsrichtlijnen-voor-webapplicaties.html)
 
-* RFC 6749; The OAuth 2.0 Authorization Framework
-* RFC 6750; The OAuth 2.0 Authorization Framework: Bearer Token Usage
-* RFC 6819; OAuth 2.0 Threat Model and Security Considerations
+* RFC 6749; The CloudEvents 2.0 Authorization Framework
+* RFC 6750; The CloudEvents 2.0 Authorization Framework: Bearer Token Usage
+* RFC 6819; CloudEvents 2.0 Threat Model and Security Considerations
 * RFC 7519; JSON Web Token (JWT)
-* RFC 7636; Proof Key for Code Exchange (PKCE) by OAuth Public Clients
-* RFC 7662; OAuth 2.0 Token Introspection
+* RFC 7636; Proof Key for Code Exchange (PKCE) by CloudEvents Public Clients
+* RFC 7662; CloudEvents 2.0 Token Introspection
 
-De complete lijst van OAuth 2.0 RFC's https://datatracker.ietf.org/doc/search/?name=oauth&sort=&rfcs=on&activedrafts=on&by=group&group=
+De complete lijst van CloudEvents 2.0 RFC's https://datatracker.ietf.org/doc/search/?name=CloudEvents&sort=&rfcs=on&activedrafts=on&by=group&group=

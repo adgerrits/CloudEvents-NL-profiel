@@ -2,7 +2,7 @@
 
 **Auteurs!**
 Om de nummering van dit document gelijk te trekken met de nummering van het origineel
-heb ik het bestand *NL GOV Assurance profile for OAuth 2.0.md* Opgedeeld in verschillende bestanden.
+heb ik het bestand *NL GOV Assurance profile for CloudEvents 2.0.md* Opgedeeld in verschillende bestanden.
 Elk hoofdstuk is een separaat bestand geworden.
 Het oorspronkelijken document is verplaatst naar de submap "oud"
 

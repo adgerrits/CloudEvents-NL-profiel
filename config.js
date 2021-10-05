@@ -17,7 +17,7 @@ var respecConfig =
   specType: "ST",
   // format: "markdown",
   pubDomain: "api",
-  shortName: "oauth",
+  shortName: "CloudEvents",
 
   publishDate: "2020-07-09",
   //previousPublishDate: "2019-02-13",
@@ -87,14 +87,14 @@ var respecConfig =
         companyURL: "http://www.rws.nl/",
       },
     ],
-  github: "https://github.com/Logius-standaarden/OAuth-NL-profiel/",
-  issueBase: "https://github.com/Logius-standaarden/OAuth-NL-profiel/issues",
+  github: "https://github.com/Logius-standaarden/CloudEvents-NL-profiel/",
+  issueBase: "https://github.com/Logius-standaarden/CloudEvents-NL-profiel/issues",
   licence: "cc-by-nd",
 
   nl_github: {
-    issueBase: "https://github.com/Logius-standaarden/OAuth-NL-profiel/issues",
-    revision: "https://github.com/Logius-standaarden/OAuth-NL-profiel/commits",
-    pullsBase: "https://github.com/Logius-standaarden/OAuth-NL-profiel/pulls",
+    issueBase: "https://github.com/Logius-standaarden/CloudEvents-NL-profiel/issues",
+    revision: "https://github.com/Logius-standaarden/CloudEvents-NL-profiel/commits",
+    pullsBase: "https://github.com/Logius-standaarden/CloudEvents-NL-profiel/pulls",
   },
 
   // Controls if linked "§" section markers are added to a document
@@ -139,18 +139,18 @@ var respecConfig =
     url: "https://www.logius.nl/standaarden",
   },
   localBiblio: {
-    "OAuth2": {
+    "CloudEvents2": {
       href: "https://tools.ietf.org/html/rfc6749",
       title:
-        "The OAuth 2.0 Authorization Framework",
+        "The CloudEvents 2.0 Authorization Framework",
       authors: ["D. Hardt"],
       date: "October 2012",
       publisher: "The Internet Engineering Task Force",
     },
     "Expert": {
-      href: "https://www.forumstandaardisatie.nl/sites/bfs/files/Expertadvies%20OAuth%202.0.pdf",
+      href: "https://www.forumstandaardisatie.nl/sites/bfs/files/Expertadvies%20CloudEvents%202.0.pdf",
       title:
-        "Expertadvies OAuth 2.0",
+        "Expertadvies CloudEvents 2.0",
       authors: ["P. Dam"],
       date: "24 februari 2017",
       publisher: "Forum STandaardisatie",
@@ -198,7 +198,7 @@ var respecConfig =
     "PKCE": {
       href: "https://tools.ietf.org/html/rfc7636",
       title:
-        "Proof Key for Code Exchange by OAuth Public Clients",
+        "Proof Key for Code Exchange by CloudEvents Public Clients",
       authors: ["N. Sakimura, J. Bradley, N. Agarwal"],
       date: "september 2015",
       publisher: "IETF",
@@ -206,7 +206,7 @@ var respecConfig =
     "Introspection": {
       href: "https://tools.ietf.org/html/rfc7662",
       title:
-        "OAuth 2.0 Token Introspection",
+        "CloudEvents 2.0 Token Introspection",
       authors: ["J. Richer"],
       date: "October 2015",
       publisher: "IETF",
@@ -227,10 +227,10 @@ var respecConfig =
       date: "October 5 2018",
       publisher: "OpenID foundation",
     },
-    "iGOV.OAuth2": {
-      href: "https://openid.net/specs/openid-igov-oauth2-1_0.html",
+    "iGOV.CloudEvents2": {
+      href: "https://openid.net/specs/openid-igov-CloudEvents2-1_0.html",
       title:
-        "International Government Assurance Profile (iGov) for OAuth 2.0",
+        "International Government Assurance Profile (iGov) for CloudEvents 2.0",
       authors: ["J. Richer, M. Varley, P. Grassi"],
       date: "October 5 2018",
       publisher: "OpenID foundation",
@@ -243,18 +243,18 @@ var respecConfig =
       date: "November 8 2014",
       publisher: "OpenID foundation",
     },
-    "I-D.ietf-oauth-pop-architecture": {
-      href: "https://tools.ietf.org/html/draft-ietf-oauth-pop-architecture-08",
+    "I-D.ietf-CloudEvents-pop-architecture": {
+      href: "https://tools.ietf.org/html/draft-ietf-CloudEvents-pop-architecture-08",
       title:
-        "OAuth 2.0 Proof-of-Possession (PoP) Security Architecture",
+        "CloudEvents 2.0 Proof-of-Possession (PoP) Security Architecture",
       authors: ["P. Hunt, J. Richer, W. Mills, P. Mishra, H. Tschofenig"],
       date: "July 8, 2016",
       publisher: "IETF",
     },
-    "HEART.OAuth2": {
-      href: "https://openid.net/specs/openid-heart-oauth2-1_0.html",
+    "HEART.CloudEvents2": {
+      href: "https://openid.net/specs/openid-heart-CloudEvents2-1_0.html",
       title:
-        "Health Relationship Trust Profile for OAuth 2.0",
+        "Health Relationship Trust Profile for CloudEvents 2.0",
       authors: ["J. Richer"],
       date: "April 25, 2017",
       publisher: "OpenID foundation",
