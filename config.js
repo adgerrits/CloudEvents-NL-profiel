@@ -94,13 +94,13 @@ var respecConfig =
   nl_logo: {
     src: "https://www.vngrealisatie.nl/themes/custom/tagordo/dist/images/Logo.svg",
     alt: "VNG Realisatie",
-    id: "Logius",
+    id: "VNG Realisatie",
     height: 77,
     width: 44,
     url: "https://www.vngrealisatie.nl",
   },
   localBiblio: {
-    "CloudEvents2": {
+    "CloudEvents": {
       href: "https://tools.ietf.org/html/rfc6749",
       title:
         "The CloudEvents 2.0 Authorization Framework",

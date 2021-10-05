@@ -109,7 +109,7 @@ The following attributes are REQUIRED to be present in all CloudEvents:
   - An event counter maintained by the producer
   - A UUID
 
-** CloudEvents-NL **
+**CloudEvents-NL**
 
 - Er moet daadwerkelijk een ID ingevuld moet worden. Geen workarounds zoals “onbekend”.
 - Doel van het ID is dat dit daadwerkelijk een event bij de bron identificeert. (Zo zou het ID wellicht gebruikt kunnen worden om bij de bron informatie over het event op te vragen).

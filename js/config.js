@@ -24,7 +24,7 @@ var respecConfig = {
   github: "https://github.com/adgerrits/CloudEvents-NL-profiel",
   issueBase: "https://github.com/adgerrits/CloudEvents-NL-profiel/issues/",
   localBiblio: {
-    "CloudEvents1": {
+    "CloudEvents": {
       href: "https://github.com/cloudevents/spec/blob/v1.0.1/spec.md",
       title:
         "CloudEvents - Version 1.0.1",
