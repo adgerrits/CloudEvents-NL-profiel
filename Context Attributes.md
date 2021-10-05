@@ -98,8 +98,8 @@ The following attributes are REQUIRED to be present in all CloudEvents:
 
 - Type: `String`
 - Description: Identifies the event. Producers MUST ensure that `source` + `id`
-  is unique for each distinct event. If a duplicate event is re-sent (e.g. due
-  to a network error) it MAY have the same `id`. Consumers MAY assume that
+  is unique for each distinct event. ~~If a duplicate event is re-sent (e.g. due
+  to a network error) it MAY have the same `id`.~~ Consumers ~~MAY~~ MUST assume that
   Events with identical `source` and `id` are duplicates.
 - Constraints:
   - REQUIRED
@@ -108,6 +108,14 @@ The following attributes are REQUIRED to be present in all CloudEvents:
 - Examples:
   - An event counter maintained by the producer
   - A UUID
+
+** CloudEvents-NL **
+
+- Er moet daadwerkelijk een ID ingevuld moet worden. Geen workarounds zoals “onbekend”.
+- Doel van het ID is dat dit daadwerkelijk een event bij de bron identificeert. (Zo zou het ID wellicht gebruikt kunnen worden om bij de bron informatie over het event op te vragen).
+- Het wordt aanbevolen om ook ‘surrogaat events’ (CRUD of CRUD + eventtype) te persisteren en daarbij van een ID te voorzien.
+- Indien er geen ID voorhanden is dat het event duurzaam kan identificeren (duurzaam = er kan later nog bij de bron aan gerefereerd worden) dan mag een random ID gebruikt worden. De beperkingen van dit ID (oa. dat het geen zin heeft om er met de bron over te communiceren) moeten duidelijk in de domeinstandaard/documentatie vermeld worden.
+
 
 #### source
 

@@ -1,7 +1,7 @@
 ﻿# Dutch government Assurance profile for CloudEvents 2.0  
-This profile is based upon the international government assurance profile for CloudEvents 2.0 (iGov) [[iGOV.CloudEvents2]] as published by the OpenID Foundation (https://openid.net/foundation/). It should be considered a fork of this profile as the iGov profile is geared more towards the American situtation and in the Netherlands we have to deal with an European Union context. 
+This profile is based upon the international government assurance profile for CloudEvents 2.0 (CloudEvents) [[CloudEvents.CloudEvents2]] as published by the OpenID Foundation (https://openid.net/foundation/). It should be considered a fork of this profile as the CloudEvents profile is geared more towards the American situtation and in the Netherlands we have to deal with an European Union context. 
 
-We have added the chapter [Usecases](#Usecases) to illustrate the specific usecase the iGov-NL profile is aimed at. Starting with chapter [Introduction](#Introduction) we follow the structure of the iGov profile. Where we do not use content from iGov we use ~~strikethrough~~ to indicate it is not part of iGov-NL. Where we have added more specific requirements for the Dutch situation this is indicated with **iGov-NL** tags.
+We have added the chapter [Usecases](#Usecases) to illustrate the specific usecase the CloudEvents-NL profile is aimed at. Starting with chapter [Introduction](#Introduction) we follow the structure of the CloudEvents profile. Where we do not use content from CloudEvents we use ~~strikethrough~~ to indicate it is not part of CloudEvents-NL. Where we have added more specific requirements for the Dutch situation this is indicated with **CloudEvents-NL** tags.
 
 # Usecases
  <figure id='authorization_code'>
@@ -100,7 +100,7 @@ This document profiles the CloudEvents 2.0 web authorization framework for use i
 2.  Identify optional, advanced security controls for sensitive use cases where increased risk justifies more stringent controls.
 
 
-This CloudEvents profile is intended to be shared broadly, and has been ~~greatly influenced by the [HEART CloudEvents2 Profile][[HEART.CloudEvents2]].~~ derived from the [iGov CloudEvents2 profile] [[iGOV.CloudEvents2]].
+This CloudEvents profile is intended to be shared broadly, and has been ~~greatly influenced by the [HEART CloudEvents2 Profile][[HEART.CloudEvents2]].~~ derived from the [CloudEvents CloudEvents2 profile] [[CloudEvents.CloudEvents2]].
 
 <!-- ### [1.1.](#rfc.section.1.1) [Requirements Notation and Conventions](#rnc) -->
 ## Requirements Notation and Conventions  
@@ -128,20 +128,20 @@ The specification also defines features for interaction between these components
 *   Client to authorization server.
 *   Protected resource to authorization server.
 
-**iGov-NL**
+**CloudEvents-NL**
 
-This profile is based upon the international government assurance profile for CloudEvents 2.0 (iGov) [iGOV.CloudEvents2] as published by the OpenID Foundation (https://openid.net/foundation/). It should be considered a fork of this profile as the iGov profile is geared more towards the American situtation and in the Netherlands we have to deal with an European Union context.
+This profile is based upon the international government assurance profile for CloudEvents 2.0 (CloudEvents) [CloudEvents.CloudEvents2] as published by the OpenID Foundation (https://openid.net/foundation/). It should be considered a fork of this profile as the CloudEvents profile is geared more towards the American situtation and in the Netherlands we have to deal with an European Union context.
 
-**/iGov-NL**
+**/CloudEvents-NL**
 
 
-When an ~~iGov~~iGov-NL-compliant component is interacting with other ~~iGov~~iGov-NL-compliant components, in any valid combination, all components MUST fully conform to the features and requirements of this specification. All interaction with non-~~iGov~~iGov-NL components is outside the scope of this specification.
+When an ~~CloudEvents~~CloudEvents-NL-compliant component is interacting with other ~~CloudEvents~~CloudEvents-NL-compliant components, in any valid combination, all components MUST fully conform to the features and requirements of this specification. All interaction with non-~~CloudEvents~~CloudEvents-NL components is outside the scope of this specification.
 
-An ~~iGov~~iGov-NL-compliant CloudEvents 2.0 authorization server MUST support all features as described in this specification. A general-purpose authorization server MAY support additional features for use with non-~~iGov~~iGov-NL clients and protected resources.
+An ~~CloudEvents~~CloudEvents-NL-compliant CloudEvents 2.0 authorization server MUST support all features as described in this specification. A general-purpose authorization server MAY support additional features for use with non-~~CloudEvents~~CloudEvents-NL clients and protected resources.
 
-An ~~iGov~~iGov-NL-compliant CloudEvents 2.0 client MUST use all functions as described in this specification. A general-purpose client library MAY support additional features for use with non-iGov authorization servers and protected resources.
+An ~~CloudEvents~~CloudEvents-NL-compliant CloudEvents 2.0 client MUST use all functions as described in this specification. A general-purpose client library MAY support additional features for use with non-CloudEvents authorization servers and protected resources.
 
-An ~~iGov~~iGov-NL-compliant CloudEvents 2.0 protected resource MUST use all functions as described in this specification. A general-purpose protected resource library MAY support additional features for use with non-~~iGov~~iGov-NL authorization servers and clients.
+An ~~CloudEvents~~CloudEvents-NL-compliant CloudEvents 2.0 protected resource MUST use all functions as described in this specification. A general-purpose protected resource library MAY support additional features for use with non-~~CloudEvents~~CloudEvents-NL authorization servers and clients.
 <!-- ### [2.](#rfc.section.2) [Client Profiles](#ClientProfiles) -->
 # Client Profiles
 
@@ -182,11 +182,11 @@ Native applications not registering a separate public key for each instance are 
 <!-- ### [2.1.3.](#rfc.section.2.1.3) [Direct Access Client](#DirectClient) -->
 ### Direct Access Client
 
-**iGov-NL**
+**CloudEvents-NL**
 
-Direct Access Clients are out of scope in this version of iGov-NL.
+Direct Access Clients are out of scope in this version of CloudEvents-NL.
 
-**/iGov-NL**
+**/CloudEvents-NL**
 
 ~~This client type MUST NOT request or be issued a refresh token.~~
 
@@ -229,7 +229,7 @@ Full clients and browser-embedded clients making a request to the authorization 
 
 Clients MUST include their full redirect URI in the authorization request. To prevent open redirection and other injection attacks, the authorization server MUST match the entire redirect URI using a direct string comparison against registered values and MUST reject requests with an invalid or missing redirect URI.
 
-**iGov-NL**
+**CloudEvents-NL**
 
 Native clients MUST apply PKCE, as per RFC7636.
 As `code_verifier` the S256 method MUST be applied.
@@ -253,7 +253,7 @@ Request fields:
 <dd>In case `code_challenge` is used with a native app, mandatory. MUST use the value `S256`.</dd>
 </dl>
 
-**/iGov-NL**
+**/CloudEvents-NL**
 
 The following is a sample response from a web-based client to the end user’s browser for the purpose of redirecting the end user to the authorization server's authorization endpoint:
 
@@ -281,7 +281,7 @@ Host: idp-p.example.com
 
 ### Response from the Authorization Endpoint
 
-**iGov-NL**
+**CloudEvents-NL**
 
 Response parameters
 <dl>
@@ -291,7 +291,7 @@ Response parameters
 <dd>Mandatory. MUST be a verbatim copy of the value of the <code>state</code> parameter in the Authorization Request.</dd>
 </dl>
 
-**/iGov-NL**
+**/CloudEvents-NL**
 
 
 
@@ -342,7 +342,7 @@ The following sample claim set illustrates the use of the required claims for a 
 
 The JWT assertion MUST be signed by the client using the client's private key. See [Section 2.2](#ClientRegistration) for mechanisms by which the client can make its public key known to the server. The authorization server MUST support the RS256 signature method (the Rivest, Shamir, and Adleman (RSA) signature algorithm with a 256-bit hash) and MAY use other asymmetric signature methods listed in the JSON Web Algorithms ( [JWA] [[rfc7518]] ) specification.
 
-**iGov-NL**
+**CloudEvents-NL**
 
 In addition to above signing methods, the Authorization server SHOULD support PS256 signing algorithm [[RFC7518]] for the signing of the private\_key\_jwt.
 
@@ -364,7 +364,7 @@ Effectively, the Token Request has the following content:
 <dd>Mandatory. MUST have the above specified signed JWT as contents.</dd>
 </dl>
 
-**/iGov-NL**
+**/CloudEvents-NL**
 
 The following sample JWT contains the above claims and has been signed using the RS256 JWS algorithm and the client's own private key (with line breaks for display purposes only):
 
@@ -373,7 +373,7 @@ DQtYjZjMy0zNTFhNTg2Yjc0ODQiLA0KICAgInN1YiI6ICI1NWY5ZjU1OS0yNDk2LTQ5ZDQtYjZjMy0
 zNTFhNTg2Yjc0ODQiLA0KICAgImF1ZCI6ICJodHRwczovL2lkcC1wLmV4YW1wbGUuY29tL3Rva2VuI
 iwNCiAgICJpYXQiOiAxNDE4Njk4Nzg4LA0KICAgImV4cCI6IDE0MTg2OTg4NDgsDQogICAianRpIjo
 gIjE0MTg2OTg3ODgvMTA3YzRkYTUxOTRkZjQ2M2U1MmI1Njg2NWM1YWYzNGU1NTk1Ig0KfQ.t-_gX8
-JQGq3G2OEc2kUCQ8zVj7pqff87Sua5nktLIHj28l5onO5VpsL4sRHIGOvrpo7XO6jgtPWy3iLXv3-N
+JQGq3G2OEc2kUCQ8zVj7pqff87Sua5nktLIHj28l5onO5VpsL4sRHCloudEventsrpo7XO6jgtPWy3iLXv3-N
 Lyo1TWHbtErQEGpmf7nKiNxVCXlGYJXSDJB6shP3OfvdUc24urPJNUGBEDptIgT7-Lhf6BbwQNlMQu
 bNeOPRFDqQoLWqe7UxuI06dKX3SEQRMqcxYSIAfP7CQZ4WLuKXb6oEbaqz6gL4l6p83G7wKGDeLETO
 THszt-ZjKR38v4F_MnSrx8e0iIqgZwurW0RtetEWvynOCJXk-p166T7qZR45xuCxgOotXY6O3et4n7
@@ -400,7 +400,7 @@ grant_type=authorization_code
 Dk2LTQ5ZDQtYjZjMy0zNTFhNTg2Yjc0ODQiLA0KICAgImF1ZCI6ICJodHRwczovL2lkcC1wLmV4YW1
 wbGUuY29tL3Rva2VuIiwNCiAgICJpYXQiOiAxNDE4Njk4Nzg4LA0KICAgImV4cCI6IDE0MTg2OTg4N
 DgsDQogICAianRpIjogIjE0MTg2OTg3ODgvMTA3YzRkYTUxOTRkZjQ2M2U1MmI1Njg2NWM1YWYzNGU
-1NTk1Ig0KfQ.t-_gX8JQGq3G2OEc2kUCQ8zVj7pqff87Sua5nktLIHj28l5onO5VpsL4sRHIGOvrpo
+1NTk1Ig0KfQ.t-_gX8JQGq3G2OEc2kUCQ8zVj7pqff87Sua5nktLIHj28l5onO5VpsL4sRHCloudEventsrpo
 7XO6jgtPWy3iLXv3-NLyo1TWHbtErQEGpmf7nKiNxVCXlGYJXSDJB6shP3OfvdUc24urPJNUGBEDpt
 IgT7-Lhf6BbwQNlMQubNeOPRFDqQoLWqe7UxuI06dKX3SEQRMqcxYSIAfP7CQZ4WLuKXb6oEbaqz6g
 L4l6p83G7wKGDeLETOTHszt-ZjKR38v4F_MnSrx8e0iIqgZwurW0RtetEWvynOCJXk-p166T7qZR45
@@ -431,14 +431,14 @@ cNt1H2_VQ_Ww1JOLn9vRn-H48FDj7TxlIT74XdTZgTv31w_GRPAOfyxEw_ZUmxhz5Z-gTlQ",
 }
 </pre>
 
-**iGov-NL**
+**CloudEvents-NL**
 
 In case the Authorization Server, Resource Server and client are not operated under responsibility of the same organisation, each party MUST use PKIoverheid certificates with OIN.
 The PKIoverheid certificate MUST be included either as a <code>x5c</code> or as <code>x5u</code> parameter, as per [[rfc7517]] §4.6 and 4.7. Parties SHOULD at least support the inclusion of the certificate as <code>x5c</code> parameter, for maximum interoperability. 
 Parties MAY agree to use <code>x5u</code>, for instance for communication within specific environments.  
 
 
-**/iGov-NL**
+**/CloudEvents-NL**
 
 For reference, the corresponding public/private key pair for this public key is the following (in JWK format):
 
@@ -542,11 +542,11 @@ Authorization servers MAY protect their Dynamic Registration endpoints by requir
 
 </dl>
 
-**iGov-NL**
+**CloudEvents-NL**
 
-In this version of iGov-NL we follow iGov for the requirement that the Authorization servers MUST support dynamic client registration. However depending on how the future authentication architecture of the Dutch government develops in regards to CloudEvents we may revisit this in a future revision. The current requirement fits an architecture where there is a limited number of widely used authorization servers. However if in practice we start seeing a very large number of authorization servers with limited use this requirement can become a reccomendation in a future version of this profile. For these authorization servers with limited use we consider mandatory support for dynamic client registration a large burden.
+In this version of CloudEvents-NL we follow CloudEvents for the requirement that the Authorization servers MUST support dynamic client registration. However depending on how the future authentication architecture of the Dutch government develops in regards to CloudEvents we may revisit this in a future revision. The current requirement fits an architecture where there is a limited number of widely used authorization servers. However if in practice we start seeing a very large number of authorization servers with limited use this requirement can become a reccomendation in a future version of this profile. For these authorization servers with limited use we consider mandatory support for dynamic client registration a large burden.
 
-**/iGov-NL**
+**/CloudEvents-NL**
 
 <!-- ### [3.1.4.](#rfc.section.3.1.4) Client Approval -->
 ### Client Approval
@@ -592,7 +592,7 @@ The authorization server MUST provide an [OpenID Connect service discovery] [[Op
 
 </dl>
 
-If the authorization server is also an OpenID Connect Provider, it MUST provide a discovery endpoint meeting the requirements listed in Section 3.6 of the iGov OpenID Connect profile.
+If the authorization server is also an OpenID Connect Provider, it MUST provide a discovery endpoint meeting the requirements listed in Section 3.6 of the CloudEvents OpenID Connect profile.
 
 The following example shows the JSON document found at a discovery endpoint for an authorization server:
 
@@ -687,11 +687,11 @@ U-27mb6esswnP2WgHZQPsk779fTcNDBIcYgyLujlcUATEqfCaPDNp00J6AbY6w",
 
 Clients and protected resources SHOULD cache this key. It is RECOMMENDED that servers provide cache information through HTTP headers and make the cache valid for at least one week.
 
-**iGov-NL**
+**CloudEvents-NL**
 
-iGov requires that the authorization server provides an OpenIDConnect service discovery endpoint. Recently CloudEvents 2.0 Authorization Server Metadata [[rfc8414]] has been finalized, this provide the same functionality in a more generic way and could replace this requirement in a future version of the iGov-NL profile.
+CloudEvents requires that the authorization server provides an OpenIDConnect service discovery endpoint. Recently CloudEvents 2.0 Authorization Server Metadata [[rfc8414]] has been finalized, this provide the same functionality in a more generic way and could replace this requirement in a future version of the CloudEvents-NL profile.
 
-**/iGov-NL**
+**/CloudEvents-NL**
 <!-- ### [3.1.6.](#rfc.section.3.1.6) Revocation -->
 ### Revocation
 
@@ -704,7 +704,7 @@ A client MUST immediately discard the token and not use it again after revoking 
 <!-- ### [3.1.7.](#rfc.section.3.1.7) PKCE -->
 ### PKCE
 
-An authorization server MUST support the Proof Key for Code Exchange ([PKCE] [[rfc7636]] ) extension to the authorization code flow, including support for the S256 code challenge method. The authorization server MUST NOT allow an ~~iGov~~iGov-NL client to use the plain code challenge method.
+An authorization server MUST support the Proof Key for Code Exchange ([PKCE] [[rfc7636]] ) extension to the authorization code flow, including support for the S256 code challenge method. The authorization server MUST NOT allow an ~~CloudEvents~~CloudEvents-NL client to use the plain code challenge method.
 
 <!-- ### [3.1.8.](#rfc.section.3.1.8) Redirect URIs -->
 ### Redirect URIs
@@ -726,7 +726,7 @@ Clients using the Direct Credentials method MUST NOT be issued refresh_tokens. T
 <!-- ### [3.1.10.](#rfc.section.3.1.10) Token Response -->
 ### Token Response
 
-**iGov-NL**
+**CloudEvents-NL**
 
 The Token Response has the following contents:
 
@@ -744,18 +744,18 @@ The Token Response has the following contents:
 </dl>
 
 For best practices on token lifetime see section [Token Lifetimes](#TokenLifetimes).
-**/iGov-NL**
+**/CloudEvents-NL**
 
 
 <!-- ### [3.2.](#rfc.section.3.2) Connections with protected resources -->
 ## Connections with protected resources
 
-Unlike the core CloudEvents protocol, the ~~iGov~~iGov-NL profile intends to allow compliant protected resources to connect to compliant authorization servers.
+Unlike the core CloudEvents protocol, the ~~CloudEvents~~CloudEvents-NL profile intends to allow compliant protected resources to connect to compliant authorization servers.
 
 <!-- ### [3.2.1.](#rfc.section.3.2.1) [JWT Bearer Tokens](#JWTBearerTokens) -->
 ### JWT Bearer Tokens
 
-In order to facilitate interoperability with multiple protected resources, all ~~iGov~~iGov-NL-compliant authorization servers issue cryptographically signed tokens in the JSON Web Token (JWT) format. The information carried in the JWT is intended to allow a protected resource to quickly test the integrity of the token without additional network calls, and to allow the protected resource to determine which authorization server issued the token. When combined with discovery, this information is sufficient to programmatically locate the token introspection service, which is in turn used for conveying additional security information about the token.
+In order to facilitate interoperability with multiple protected resources, all ~~CloudEvents~~CloudEvents-NL-compliant authorization servers issue cryptographically signed tokens in the JSON Web Token (JWT) format. The information carried in the JWT is intended to allow a protected resource to quickly test the integrity of the token without additional network calls, and to allow the protected resource to determine which authorization server issued the token. When combined with discovery, this information is sufficient to programmatically locate the token introspection service, which is in turn used for conveying additional security information about the token.
 
 The server MUST issue tokens as JWTs with, at minimum, the following claims:
 
@@ -787,11 +787,11 @@ The server MAY issue tokens with additional fields, including the following as d
 
 <dd style="margin-left: 8">The identifier of the end-user that authorized this client, or the client id of a client acting on its own behalf (such as a bulk transfer). Since this information could potentially leak private user information, it should be used only when needed. End-user identifiers SHOULD be pairwise anonymous identifiers unless the audiance requires otherwise.</dd>
 
-**iGov-NL**
+**CloudEvents-NL**
 
-In iGov-NL the sub claim MUST be present.
+In CloudEvents-NL the sub claim MUST be present.
 
-**/iGov-NL**
+**/CloudEvents-NL**
 
 <dt>aud</dt>
 
@@ -812,11 +812,11 @@ The following sample claim set illustrates the use of the required claims for an
 
 The access tokens MUST be signed with [JWS] [[rfc7515]] . The authorization server MUST support the RS256 signature method for tokens and MAY use other asymmetric signing methods as defined in the [IANA JSON Web Signatures and Encryption Algorithms registry] [[JWS.JWE.Algs]] . The JWS header MUST contain the following fields:
 
-**iGov-NL**
+**CloudEvents-NL**
 
 In addition to above signing methods, the Authorization server SHOULD support PS256 signing algorithm [[RFC7518]] for the signing of the JWT Bearer Tokens.
 
-**/iGov-NL**
+**/CloudEvents-NL**
 
 <dl>
 
@@ -843,14 +843,14 @@ Refresh tokens SHOULD be signed with [JWS] [[rfc7515]] using the same private ke
 
 The authorization server MAY encrypt access tokens and refresh tokens using [JWE] [[rfc7516]] . Encrypted access tokens MUST be encrypted using the public key of the protected resource. Encrypted refresh tokens MUST be encrypted using the authorization server's public key.
 
-**iGov-NL**
+**CloudEvents-NL**
 
 How to select or obtain the key to be used for encryption of an access token is out of scope of this profile.
 A early draft of "Resource Indicators for CloudEvents 2.0" exist and could be used. This draft describes usage of the <code>resource</code> parameter to indicate the applicable resource server.
 
 In case the Authorization Server, Resource Server and client are not operated under responsibility of the same organisation, each party MUST use PKIoverheid certificates with OIN for encryption.
 
-**/iGov-NL**
+**/CloudEvents-NL**
 
 <!-- ### [3.2.2.](#rfc.section.3.2.2) Introspection -->
 ### Introspection
@@ -1016,7 +1016,7 @@ For example: a resource server has resources classified as "public" and "sensiti
 
 In this manner, protected resources and authorization servers work together to meet risk tolerance levels for sensitive resources and end-user authentication.
 
-**iGov-NL**
+**CloudEvents-NL**
 ## Example
 
 ### Registration of information in the app
@@ -1047,20 +1047,20 @@ PKCE Verifier: a27f9f621eec49789dd92eca40257528d0932fd31e9b4431901f2ea531a6de40
 
 TODO complete example
 
-**/iGov-NL**
+**/CloudEvents-NL**
 
 <!-- ### [4.2.](#rfc.section.4.2) Connections with Clients -->
 ## Connections with Clients
 
 A protected resource MUST accept bearer tokens passed in the authorization header as described in [[rfc6750]] . A protected resource MAY also accept bearer tokens passed in the form parameter ~~or query parameter~~ method~~s~~.
 
-**iGov-NL**
+**CloudEvents-NL**
 
 A Protected Resource under this profile MUST NOT accept access tokens passed using the query parameter method.
 
 A Protected Resource under this profile SHOULD verify if the client is the Authorized party (azp) when client authentication is used. See section [Advanced CloudEvents Security Options](#AdvancedSecurity) as well.
 
-**/iGov-NL**
+**/CloudEvents-NL**
 
 
 Protected resources MUST define and document which scopes are required for access to the resource.
@@ -1086,26 +1086,26 @@ CloudEvents proof of possession tokens are currently defined in a set of drafts 
 
 Proof of Possession tokens are somewhat analogous to the Security Assertion Markup Language's (SAML's) Holder-of-Key mechanism for binding assertions to user identities. Proof of possession could prevent a number of attacks on CloudEvents that entail the interception of access tokens by unauthorized parties. The attacker would need to obtain the legitimate client's cryptographic key along with the access token to gain access to protected resources. Additionally, portions of the HTTP request could be protected by the same signature used in presentation of the token. Proof of possession tokens may not provide all of the same protections as PKI authentication, but they are far less challenging to implement on a distributed scale.
 
-**iGov-NL**
+**CloudEvents-NL**
 
 Proof of possession can be implemented using various methods. An example of such an implementation is using TLS with mutual authentication, where the client is using a PKIoverheid certificate. The authorized party (<code>azp</code>) can then be verified with the client certificate to match the authorized party.
 As an alternative, the authorization server can include a <code>cnf</code> parameter in the JWT by the authorization server, see [[rfc7800]]. The key referenced in <code>cnf</code> can be validated using a form of client authentication, e.g. using an private\_key\_jwt.
 
-**/iGov-NL**
+**/CloudEvents-NL**
 
 <!-- ### [6.](#rfc.section.6) Security Considerations -->
 # Security Considerations
 
 All transactions MUST be protected in transit by TLS as described in [[BCP195]] .
 
-**iGov-NL**
+**CloudEvents-NL**
 
 In addition to the Best Current Practice for TLS, it is highly RECOMMENDED for all conforming implementations to incorporate the TLS guidelines from the Dutch NCSC into their implementations. If these guidelines are applied:
 * For back-channel communication, the guidelines categorized as "good" MUST be applied.
 * For front-channel communication, the guidelines for "good" MUST be applied and the guidelines for "sufficient" MAY be applied, depending on target audience and support requirements.
 * Guidelines categorized as "insufficient" MUST NOT be applied and those categorized as "phase out" SHOULD NOT be used.
 
-**/iGov-NL**
+**/CloudEvents-NL**
 
 Authorization Servers SHOULD take into account device postures when dealing with native apps if possible. Device postures include characteristics such as a user's lock screen setting, or if the app has 'root access' (meaning the device OS may be compromised to gain additional privilages not intended by the vendor), or if there is a device attestation for the app for its validity. Specific policies or capabilities are outside the scope of this specification.
 

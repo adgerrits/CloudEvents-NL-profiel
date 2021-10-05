@@ -1,8 +1,8 @@
 var respecConfig = {
-  specStatus: "GN-DEF",
+  specStatus: "ED",
   specType: "HR",
   pubDomain: "etc",
-  publishDate: "2017-12-13",
+  publishDate: "2021-10-05",
   editors: [
     {
       name: "Jeanot Bijpost",
