@@ -116,14 +116,6 @@ var respecConfig =
       date: "@@@",
       publisher: "Forum STandaardisatie",
     },
-    "CloudEvents.CloudEvents2": {
-      href: "https://openid.net/specs/openid-CloudEvents-CloudEvents2-1_0.html",
-      title:
-        "International Government Assurance Profile (CloudEvents) for CloudEvents 2.0",
-      authors: ["J. Richer, M. Varley, P. Grassi"],
-      date: "October 5 2018",
-      publisher: "OpenID foundation",
-    },
     "OpenID.Discovery": {
       href: "https://openid.net/specs/openid-connect-discovery-1_0.html",
       title:

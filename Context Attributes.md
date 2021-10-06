@@ -111,11 +111,13 @@ The following attributes are REQUIRED to be present in all CloudEvents:
 
 **CloudEvents-NL**
 
-- Er moet daadwerkelijk een ID ingevuld moet worden. Geen workarounds zoals “onbekend”.
-- Doel van het ID is dat dit daadwerkelijk een event bij de bron identificeert. (Zo zou het ID wellicht gebruikt kunnen worden om bij de bron informatie over het event op te vragen).
-- Het wordt aanbevolen om ook ‘surrogaat events’ (CRUD of CRUD + eventtype) te persisteren en daarbij van een ID te voorzien.
-- Indien er geen ID voorhanden is dat het event duurzaam kan identificeren (duurzaam = er kan later nog bij de bron aan gerefereerd worden) dan mag een random ID gebruikt worden. De beperkingen van dit ID (oa. dat het geen zin heeft om er met de bron over te communiceren) moeten duidelijk in de domeinstandaard/documentatie vermeld worden.
-
+- An ID must actually be entered. No workarounds like “unknown”.
+- The purpose of the ID is that it actually identifies an event at the source. 
+  (For example, the ID could possibly be used to request information about the event from the source).
+- It is recommended to also persist 'surrogate events' (CRUD or CRUD + event type) and provide them with an ID.
+- If no ID is available that can sustainably identify the event (durable = it can be referenced at the source later), 
+  then random ID may be used. The limitations of this ID (eg that it makes no sense to communicate with the source about it) 
+  must be clearly stated in the domain standard/documentation.
 
 #### source
 
